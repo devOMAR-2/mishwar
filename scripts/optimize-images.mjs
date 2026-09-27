@@ -39,6 +39,9 @@ const MAX_PIXELS_OVERRIDES = { 'hero-detail': 5_000_000, 'interior-main': 5_000_
 
 /** WebP settings. Large variants are only served to high-DPR screens, where a lower quality is invisible. */
 const WEBP_OPTIONS = { quality: 74, effort: 5, smartSubsample: true };
+
+/** Busy, high-detail photographs compress poorly; a lower quality keeps them lean at 800w. */
+const QUALITY_OVERRIDES = { 'dish-stew': 44, 'dish-grill': 52, spices: 56, 'dish-kabsa': 58, 'dish-jareesh': 58 };
 const WEBP_QUALITY_LARGE = 68;
 const LARGE_FROM = 1800;
 
@@ -100,7 +103,11 @@ async function processImage(file) {
     const info = await graded(file)
       .resize({ width, withoutEnlargement: true })
       // Metadata is stripped by default (we never call withMetadata()).
-      .webp({ ...WEBP_OPTIONS, ...(width >= LARGE_FROM && { quality: WEBP_QUALITY_LARGE }) })
+      .webp({
+        ...WEBP_OPTIONS,
+        ...(width >= LARGE_FROM && { quality: WEBP_QUALITY_LARGE }),
+        ...(QUALITY_OVERRIDES[key] && { quality: Math.min(QUALITY_OVERRIDES[key], width >= LARGE_FROM ? WEBP_QUALITY_LARGE : 100) }),
+      })
       .toFile(out);
     largest = info;
   }
