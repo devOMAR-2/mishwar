@@ -148,10 +148,6 @@
   inset-block-end: -1.75rem;
   inset-inline-start: 1rem;
   inline-size: clamp(8.5rem, 34%, 15rem);
-  aspect-ratio: 4 / 5;
-  border: 6px solid var(--c-plaster);
-  border-radius: var(--radius-s);
-  box-shadow: var(--shadow-m);
   z-index: 2;
 
   @include mq(lg) {
@@ -161,31 +157,51 @@
   }
 }
 
+.hero__inset-photo {
+  aspect-ratio: 4 / 5;
+  border: 6px solid var(--c-plaster);
+  box-shadow: var(--shadow-m);
+}
+
+// The inset's caption: beside it, under the spread, on smaller screens;
+// laid over the kabsa itself once the inset is large enough to carry it.
 .hero__tag {
   position: absolute;
-  inset-block-start: 1.75rem;
-  inset-inline-end: calc(var(--gutter) + 0.25rem);
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  max-inline-size: calc(100% - 2 * var(--gutter));
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-pill);
-  background: rgb(244 238 228 / 0.92);
+  inset-block-start: calc(100% - 1.1rem);
+  inset-inline-start: calc(100% + 0.75rem);
+  display: grid;
+  inline-size: max-content;
   font-size: var(--fs-xs);
-  font-weight: 500;
-  box-shadow: var(--shadow-s);
-
-  @supports (backdrop-filter: blur(1px)) {
-    background: rgb(244 238 228 / 0.78);
-    backdrop-filter: blur(10px);
-  }
+  line-height: 1.5;
+  color: var(--fg-soft);
 
   @include mq(lg) {
-    inset-block-start: auto;
-    inset-block-end: 1.75rem;
+    inset-block: auto 0.6rem;
+    inset-inline: 0.6rem;
+    z-index: 1;
+    inline-size: auto;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-xs);
+    background: rgb(244 238 228 / 0.92);
+    box-shadow: var(--shadow-s);
+
+    @supports (backdrop-filter: blur(1px)) {
+      background: rgb(244 238 228 / 0.8);
+      backdrop-filter: blur(10px);
+    }
   }
+}
+
+.hero__tag-dish {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.hero__tag-note {
+  padding-inline-start: 0.9rem;
 }
 
 .hero__tag-dot {
@@ -193,6 +209,7 @@
   block-size: 0.45rem;
   border-radius: 50%;
   background: var(--c-clay);
+  flex-shrink: 0;
 }
 
 // Entrance choreography (runs once on load).

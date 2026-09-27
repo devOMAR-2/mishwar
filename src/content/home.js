@@ -19,7 +19,10 @@ export const home = {
       ar: 'أكل البيت اللي كبرنا عليه — كبسة وجريش وقرصان ومطازيز — مطبوخ بنفس الأصول، ومقدّم بطريقة تخليك تشوفه من جديد.',
       en: 'The food we grew up on — kabsa, jareesh, qursan, matazeez — cooked by the old rules and plated in a way that makes you look twice.',
     },
-    tag: { ar: 'كبسة لحم نعيمي · طبخة ست ساعات', en: 'Naeemi lamb kabsa · a six-hour cook' },
+    tag: {
+      dish: { ar: 'كبسة لحم نعيمي', en: 'Naeemi lamb kabsa' },
+      note: { ar: 'طبخة ست ساعات', en: 'A six-hour cook' },
+    },
   },
 
   marquee: {

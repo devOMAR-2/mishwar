@@ -44,10 +44,13 @@ function hero(ctx) {
         <figure class="hero__main photo" data-hero="media">
           ${picture(ctx, 'hero-spread', { eager: true, sizes: HERO_SIZES, className: 'hero__img' })}
         </figure>
-        <figure class="hero__inset photo" data-hero="inset">
-          ${picture(ctx, 'hero-detail', { sizes: '(min-width: 1024px) 18vw, 40vw', className: 'hero__img' })}
+        <figure class="hero__inset" data-hero="inset">
+          <div class="hero__inset-photo photo">${picture(ctx, 'hero-detail', { sizes: '(min-width: 1024px) 18vw, 40vw', className: 'hero__img' })}</div>
+          <figcaption class="hero__tag">
+            <span class="hero__tag-dish"><span class="hero__tag-dot" aria-hidden="true"></span>${ctx.t(c.tag.dish)}</span>
+            <span class="hero__tag-note">${ctx.t(c.tag.note)}</span>
+          </figcaption>
         </figure>
-        <p class="hero__tag" data-hero="inset"><span class="hero__tag-dot" aria-hidden="true"></span>${ctx.t(c.tag)}</p>
       </div>
     </div>
   </section>`;
