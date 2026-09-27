@@ -804,8 +804,12 @@
 .rooms__media {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--space-m) var(--space-l);
+  gap: var(--space-m) 0;
   align-items: start;
+
+  @include mq(md) {
+    column-gap: var(--space-l);
+  }
 }
 
 .rooms__figure--main {
