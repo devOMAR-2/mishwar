@@ -134,8 +134,8 @@ export const imageContent = {
   /* ── Dishes ───────────────────────────────────────────────── */
   'dish-kabsa': {
     alt: {
-      ar: 'لحم ضأن طري على أرز المندي في صينية معدنية، حولها المرق والدقوس واللبن وليمون',
-      en: 'Tender lamb on mandi rice in a metal platter, surrounded by broth, tomato daqqus, yoghurt and lime',
+      ar: 'لحم ضأن طري على رز الكبسة في صينية معدنية، حوله المرق والدقوس واللبن والليمون',
+      en: 'Tender lamb on kabsa rice in a metal platter, with broth, dakkous, laban and lime',
     },
     credit: stock('aboodi vesakaran'),
   },
@@ -219,8 +219,8 @@ export const imageContent = {
   },
   'dish-dessert': {
     alt: {
-      ar: 'كعكة سميد مستديرة تعلوها شرائح الفستق وجوز الهند وبتلات الورد',
-      en: 'A round semolina cake topped with slivered pistachio, coconut and rose petals',
+      ar: 'كيكة سميد بالتمر مستديرة تعلوها شرائح الفستق وجوز الهند وبتلات الورد',
+      en: 'A round date and semolina cake topped with slivered pistachio, coconut and rose petals',
     },
     credit: stock('Emre ÇOBAN'),
   },

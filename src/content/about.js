@@ -206,7 +206,7 @@ export const about = {
         id: 'dates',
         name: { ar: 'تمر سكري', en: 'Sukkari dates' },
         origin: { ar: 'بريدة، القصيم', en: 'Buraydah, Qassim' },
-        use: { ar: 'مع القهوة، وكيكة التمر', en: 'With coffee, and the date cake' },
+        use: { ar: 'مع القهوة، وفي كيكة السميد', en: 'With coffee, and in the semolina cake' },
         km: 330,
         place: 'qassim',
       },
