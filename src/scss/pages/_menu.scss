@@ -668,6 +668,19 @@
 
 // Pair: a wide landscape and a narrow portrait, offset like a spread.
 .menu-features--pair {
+  // Half-width cards are too narrow for name, leader and price on one line.
+  @include mq(md, xl) {
+    .menu-feature__head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .menu-leader {
+      display: none;
+    }
+  }
+
   @include mq(md) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
