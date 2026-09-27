@@ -783,6 +783,18 @@
   }
 }
 
+// Small laptops: the branch column is narrow, so details run in one column.
+@include mq(lg, xl) {
+  .branch__extras,
+  .branch__facts {
+    grid-template-columns: 1fr;
+  }
+
+  .branch__actions .btn {
+    flex: 1 1 100%;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Coming soon: an empty plot, waiting
 // ---------------------------------------------------------------------------
