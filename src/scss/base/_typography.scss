@@ -24,6 +24,15 @@ h4 {
   font-optical-sizing: auto;
 }
 
+// Reem Kufi's word space is barely a third of an em narrower than the text
+// face's, so multi-word Kufi lines run together without a little help.
+:is(h1, h2, h3, h4, blockquote, .marquee__track, .intro__fact-value, .creed__item-title,
+  .site-footer__kicker, .menu-index__name, .menu-empty__title, .menu-notes__reserve-title,
+  .choice__label, .stops__label, .rmap__city):lang(ar),
+.name-ar {
+  word-spacing: 0.1em;
+}
+
 ::selection {
   background: var(--c-clay);
   color: var(--c-plaster);
