@@ -1,0 +1,86 @@
+@use '../abstracts' as *;
+
+// Scroll reveals. Content is only hidden when JS is running *and* the visitor
+// hasn't asked for reduced motion, so nothing is ever lost without JS.
+@include motion {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 1.75rem, 0);
+    transition:
+      opacity var(--dur-slow) var(--ease-out),
+      transform var(--dur-slow) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+
+  .js [data-reveal='fade'] {
+    transform: none;
+  }
+
+  .js [data-reveal='image'] {
+    opacity: 1;
+    transform: none;
+    clip-path: inset(12% 0 0 0);
+    transition: clip-path 1.2s var(--ease-out);
+    transition-delay: var(--reveal-delay, 0s);
+
+    img {
+      scale: 1.1;
+      transition: scale 1.6s var(--ease-out);
+      transition-delay: var(--reveal-delay, 0s);
+    }
+  }
+
+  .js [data-reveal].is-inview {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js [data-reveal='image'].is-inview {
+    clip-path: inset(0);
+
+    img {
+      scale: 1;
+    }
+  }
+
+  // Cross-document page transitions (progressive enhancement).
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root) {
+    animation: vt-out 0.25s var(--ease-in-out) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-in 0.45s var(--ease-out) both;
+  }
+
+  .site-header {
+    view-transition-name: site-header;
+  }
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

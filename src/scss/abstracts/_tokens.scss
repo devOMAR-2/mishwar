@@ -1,0 +1,55 @@
+// ---------------------------------------------------------------------------
+// Design tokens (Sass side). Emitted as CSS custom properties in base/_root.
+// Palette: Najdi plaster, clay, date and saffron — warm, earthy, contemporary.
+// ---------------------------------------------------------------------------
+
+$colors: (
+  'plaster': #f4eee4,
+  'plaster-2': #ebe2d4,
+  'plaster-3': #ddd0bc,
+  'ink': #211a15,
+  'ink-soft': #5b4f45,
+  'ink-mute': #6f6257,
+  'clay': #a64b25,
+  'clay-deep': #85391a,
+  'clay-soft': #ecd3c1,
+  'saffron': #e2a63d,
+  'saffron-soft': #f3dfb4,
+  'date': #2a1e17,
+  'date-2': #3a2a20,
+  'date-3': #4d3a2d,
+  'cardamom': #55653a,
+  'chili': #ad3520,
+);
+
+$space: (
+  '3xs': 0.25rem,
+  '2xs': 0.5rem,
+  'xs': 0.75rem,
+  's': 1rem,
+  'm': 1.5rem,
+  'l': 2rem,
+  'xl': 3rem,
+  '2xl': 4rem,
+  '3xl': 6rem,
+  '4xl': 8rem,
+);
+
+$radii: (
+  'xs': 2px,
+  's': 6px,
+  'm': 14px,
+  'l': 28px,
+  'pill': 999px,
+);
+
+$z: (
+  'base': 1,
+  'raised': 10,
+  'reserve-bar': 80,
+  'header': 90,
+  'overlay': 100,
+);
+
+$container-max: 1360px;
+$container-narrow: 880px;

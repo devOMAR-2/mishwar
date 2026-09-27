@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+.container {
+  inline-size: 100%;
+  max-inline-size: calc(var(--container) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-inline-size: calc(var(--container-narrow) + var(--gutter) * 2);
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--tight {
+  padding-block: calc(var(--section-y) * 0.6);
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: calc(var(--z-overlay) + 1);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-ink);
+  color: var(--c-plaster);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform var(--dur-fast) var(--ease-out);
+
+  &:focus-visible {
+    transform: none;
+  }
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+main:focus {
+  outline: none;
+}
+
+// Tarma triangle row — the brand's recurring Najdi detail.
+.tri-rule {
+  @include triangle-row(10px, 6px);
+  color: var(--accent);
+  inline-size: 100%;
+  opacity: 0.9;
+}
+
+.img {
+  background-color: var(--img-placeholder, var(--c-plaster-3));
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.img--missing {
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(135deg, var(--c-plaster-2) 0 12px, var(--c-plaster-3) 12px 24px);
+}
+
+// Shared frame for photography: clipped corners + a faint warm base so
+// images from different photographers sit together.
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-s);
+  background-color: var(--c-plaster-3);
+  isolation: isolate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgb(42 30 23 / 0.14));
+    pointer-events: none;
+  }
+}
+
+.icon {
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  flex-shrink: 0;
+}
+
+[dir='rtl'] .icon--directional {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,108 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: var(--ff-text);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  background-color: var(--bg);
+  font-feature-settings: 'kern';
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-display);
+}
+
+:lang(en) :is(h1, h2, h3) {
+  font-weight: 400;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--c-clay);
+  color: var(--c-plaster);
+}
+
+// Eyebrow label: tiny clay triangle + label. Uppercase tracking in English only —
+// Arabic is never letter-spaced.
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--ff-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--accent);
+
+  &::before {
+    content: '';
+    inline-size: 0.62em;
+    block-size: 0.54em;
+    background: currentColor;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    flex-shrink: 0;
+  }
+
+  &:lang(en) {
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  color: var(--fg-soft);
+
+  &:lang(en) {
+    line-height: 1.55;
+  }
+}
+
+// Accent word inside a heading: clay in Arabic, italic serif in English.
+.accent {
+  color: var(--accent);
+  font-style: normal;
+
+  &:lang(en) {
+    font-style: italic;
+    font-weight: 350;
+  }
+}
+
+// Bilingual names: the "other" script set in its own face.
+.name-en {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.name-ar {
+  font-family: var(--ff-kufi);
+  font-weight: 500;
+}
+
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.prose {
+  max-inline-size: 62ch;
+
+  > * + * {
+    margin-block-start: 1.1em;
+  }
+
+  a {
+    color: var(--accent);
+  }
+}

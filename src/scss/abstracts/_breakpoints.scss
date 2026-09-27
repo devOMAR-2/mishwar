@@ -1,0 +1,31 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'sm': 480px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  'xxl': 1600px,
+);
+
+/// Mobile-first media query: `@include mq(md) { … }`
+@mixin mq($from, $until: null) {
+  $min: map.get($breakpoints, $from);
+  @if $until {
+    $max: map.get($breakpoints, $until) - 0.02px;
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+/// Below a breakpoint: `@include mq-down(lg) { … }`
+@mixin mq-down($until) {
+  @media (max-width: map.get($breakpoints, $until) - 0.02px) {
+    @content;
+  }
+}
