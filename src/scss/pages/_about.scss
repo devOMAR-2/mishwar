@@ -1,0 +1,1073 @@
+@use '../abstracts' as *;
+
+// Shared caption for About photography.
+.about-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-block-start: var(--space-xs);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+  color: var(--fg-mute);
+
+  &::before {
+    content: '';
+    inline-size: 1.25rem;
+    block-size: 1px;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hero
+// ---------------------------------------------------------------------------
+.about-hero .page-hero__title {
+  max-inline-size: 14ch;
+}
+
+// ---------------------------------------------------------------------------
+// The name, set like a dictionary entry
+// ---------------------------------------------------------------------------
+.name-entry {
+  overflow: clip;
+}
+
+.name-entry__grid {
+  display: grid;
+  gap: var(--space-m);
+
+  @include mq(lg) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-l);
+    align-items: center;
+  }
+}
+
+.name-entry__label {
+  @include mq(lg) {
+    grid-column: 1 / -1;
+  }
+}
+
+.name-entry__word {
+  font-family: var(--ff-kufi);
+  font-size: clamp(5.5rem, 3rem + 13vw, 13rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--c-clay);
+
+  @include mq(lg) {
+    grid-column: 1 / 7;
+  }
+}
+
+.name-entry__body {
+  display: grid;
+  gap: var(--space-m);
+  max-inline-size: 36rem;
+
+  @include mq(lg) {
+    grid-column: 7 / -1;
+  }
+}
+
+.name-entry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  padding-block-end: var(--space-s);
+  border-block-end: 1px solid var(--line-strong);
+}
+
+.name-entry__phonetic {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-md);
+  font-style: italic;
+  color: var(--fg);
+}
+
+.name-entry__grammar {
+  font-size: var(--fs-sm);
+  color: var(--fg-mute);
+}
+
+.name-entry__senses {
+  display: grid;
+  gap: var(--space-s);
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+
+  &:lang(en) {
+    line-height: 1.5;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+  }
+}
+
+.name-entry__num {
+  font-weight: 600;
+  color: var(--c-clay);
+}
+
+.name-entry__example {
+  padding-inline-start: 1.75rem;
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+
+  &:lang(en) {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-base);
+    font-style: italic;
+  }
+}
+
+// Dotted "drive" line — the brand's route motif.
+.name-entry__route {
+  display: block;
+  inline-size: 100%;
+  block-size: clamp(3.5rem, 8vw, 6.5rem);
+  margin-block-start: var(--space-l);
+  overflow: visible;
+
+  @include mq(lg) {
+    grid-column: 1 / -1;
+  }
+
+  [dir='rtl'] & {
+    transform: scaleX(-1);
+  }
+
+  path {
+    fill: none;
+    stroke: var(--c-clay);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-dasharray: 0 11;
+    vector-effect: non-scaling-stroke;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Chapters
+// ---------------------------------------------------------------------------
+.chapters__list {
+  display: grid;
+  gap: clamp(4.5rem, 3rem + 7vw, 10rem);
+}
+
+.chapter {
+  display: grid;
+  gap: var(--space-xl);
+
+  @include mq(lg) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--space-l);
+    align-items: center;
+  }
+}
+
+.chapter__text {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-s);
+
+  @include mq(lg) {
+    grid-column: 1 / 6;
+  }
+}
+
+.chapter__media {
+  @include mq(lg) {
+    grid-column: 7 / -1;
+  }
+}
+
+@include mq(lg) {
+  .chapter:nth-child(even) {
+    .chapter__text {
+      grid-column: 8 / -1;
+      grid-row: 1;
+    }
+
+    .chapter__media {
+      grid-column: 1 / 7;
+      grid-row: 1;
+    }
+  }
+}
+
+.chapter__num {
+  font-family: var(--ff-display);
+  font-size: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--c-clay);
+
+  &:lang(en) {
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+.chapter__kicker {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--fg-mute);
+
+  &:lang(en) {
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+}
+
+.chapter__title {
+  font-size: var(--fs-h2);
+  line-height: 1.3;
+  margin-block-end: var(--space-2xs);
+
+  &:lang(en) {
+    line-height: 1.05;
+  }
+}
+
+.chapter__para {
+  max-inline-size: 46ch;
+  color: var(--fg-soft);
+
+  &:last-child {
+    color: var(--fg);
+  }
+}
+
+// Image pair: a tall main photograph with a smaller detail overlapping its foot.
+.chapter__media,
+.hosting__media {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+}
+
+.chapter__figure--main,
+.hosting__figure--main {
+  grid-column: 1 / 10;
+  grid-row: 1;
+
+  .photo {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.chapter__figure--detail,
+.hosting__figure--detail {
+  grid-column: 8 / -1;
+  grid-row: 1;
+  align-self: end;
+  margin-block-end: calc(var(--space-xl) * -1);
+  z-index: 1;
+
+  .photo {
+    aspect-ratio: 1;
+    border: 6px solid var(--bg);
+    box-shadow: var(--shadow-m);
+  }
+}
+
+.chapter__media {
+  padding-block-end: var(--space-xl);
+}
+
+.chapter:nth-child(even) {
+  .chapter__figure--main {
+    grid-column: 4 / -1;
+  }
+
+  .chapter__figure--detail {
+    grid-column: 1 / 6;
+  }
+
+  // Keep the main caption clear of the overlapping detail photograph.
+  .chapter__figure--main .about-caption {
+    justify-content: flex-end;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Pull quote
+// ---------------------------------------------------------------------------
+.about-quote {
+  padding-block: clamp(4.5rem, 3rem + 7vw, 9rem);
+}
+
+.about-quote__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-l);
+  text-align: center;
+}
+
+.about-quote__rule {
+  inline-size: 7rem;
+  color: var(--c-saffron);
+}
+
+.about-quote__text {
+  font-family: var(--ff-display);
+  font-size: clamp(1.625rem, 1.05rem + 2.5vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.55;
+  text-wrap: balance;
+
+  &:lang(en) {
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+  }
+
+  p::before {
+    content: '«';
+    color: var(--c-saffron);
+  }
+
+  p::after {
+    content: '»';
+    color: var(--c-saffron);
+  }
+
+  p:lang(en)::before {
+    content: '“';
+  }
+
+  p:lang(en)::after {
+    content: '”';
+  }
+}
+
+.about-quote__cite {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--fg-soft);
+
+  &::before {
+    content: '';
+    inline-size: 2rem;
+    block-size: 1px;
+    background: var(--c-saffron);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Philosophy: what we keep / what we add
+// ---------------------------------------------------------------------------
+.creed__grid {
+  display: grid;
+  gap: var(--space-2xl);
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+}
+
+.creed__col {
+  @include mq(md) {
+    padding-inline-end: clamp(1.5rem, 4vw, 4.5rem);
+
+    & + & {
+      padding-inline: clamp(1.5rem, 4vw, 4.5rem) 0;
+      border-inline-start: 1px solid var(--line-strong);
+    }
+  }
+}
+
+.creed__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-end: var(--space-m);
+  font-size: var(--fs-h4);
+
+  .icon {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    padding: 0.55rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    color: var(--fg-soft);
+  }
+}
+
+.creed__col--add .creed__heading .icon {
+  border-color: transparent;
+  background: var(--c-clay);
+  color: var(--c-plaster);
+}
+
+.creed__list {
+  display: grid;
+}
+
+.creed__item {
+  display: grid;
+  gap: 0.2rem;
+  padding-block: var(--space-m);
+  border-block-start: 1px solid var(--line);
+
+  @include mq(lg) {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--space-m);
+  }
+}
+
+.creed__item-title {
+  font-family: var(--ff-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  line-height: 1.5;
+
+  &:lang(en) {
+    font-weight: 400;
+    line-height: 1.3;
+  }
+}
+
+.creed__item-text {
+  color: var(--fg-soft);
+  max-inline-size: 40ch;
+}
+
+// ---------------------------------------------------------------------------
+// Ingredient index + origins map
+// ---------------------------------------------------------------------------
+.ingredients__grid {
+  display: grid;
+  gap: var(--space-2xl);
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: start;
+  }
+}
+
+.ingredients__intro .section-head {
+  margin-block-end: var(--space-xl);
+}
+
+.ingredients__map {
+  max-inline-size: 26rem;
+  margin-inline: auto;
+
+  @include mq(lg) {
+    margin-inline: 0;
+  }
+}
+
+.origins-map {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  overflow: visible;
+  direction: ltr;
+  font-family: var(--ff-text);
+}
+
+.origins-map__grid line {
+  stroke: var(--fg);
+  stroke-opacity: 0.12;
+  stroke-width: 1;
+  stroke-dasharray: 1 5;
+}
+
+.origins-map__degrees text {
+  font-family: var(--ff-serif);
+  font-size: 8.5px;
+  fill: var(--fg-mute);
+  opacity: 0.8;
+}
+
+.origins-map__seas text {
+  font-family: var(--ff-serif);
+  font-size: 11px;
+  font-style: italic;
+  fill: var(--fg-mute);
+
+  &:lang(ar) {
+    font-family: var(--ff-text);
+    font-style: normal;
+  }
+}
+
+.origins-map__routes path {
+  fill: none;
+  stroke: var(--c-clay);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-dasharray: 0 6;
+}
+
+.origins-map__place {
+  circle {
+    fill: var(--c-ink);
+  }
+
+  text {
+    font-size: 12px;
+    font-weight: 600;
+    fill: var(--fg);
+  }
+}
+
+.origins-map__nums {
+  font-size: 10px;
+  font-weight: 500;
+  fill: var(--c-clay);
+}
+
+.origins-map__riyadh {
+  circle {
+    fill: var(--c-clay);
+  }
+
+  .origins-map__halo {
+    fill: none;
+    stroke: var(--c-clay);
+    stroke-opacity: 0.4;
+  }
+
+  text {
+    font-family: var(--ff-display);
+    font-size: 15px;
+    font-weight: 700;
+    fill: var(--c-clay);
+  }
+}
+
+.ingredient-index {
+  display: grid;
+  border-block-start: 1px solid var(--line-strong);
+}
+
+.ingredient {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr) auto;
+  grid-template-areas:
+    'num name km'
+    'num origin origin'
+    'num use use';
+  gap: 0.15rem var(--space-s);
+  padding-block: var(--space-m);
+  border-block-end: 1px dashed var(--line-strong);
+
+  @include mq(md) {
+    grid-template-columns: 2.5rem minmax(0, 1.25fr) minmax(0, 1fr) 4.5rem;
+    grid-template-areas:
+      'num name origin km'
+      'num name use km';
+    column-gap: var(--space-m);
+    align-items: baseline;
+  }
+}
+
+.ingredient__num {
+  grid-area: num;
+  padding-block-start: 0.35rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-clay);
+}
+
+.ingredient__name {
+  grid-area: name;
+  display: grid;
+  font-size: var(--fs-h4);
+  line-height: 1.4;
+
+  &:lang(en) {
+    line-height: 1.2;
+  }
+}
+
+.ingredient__alt {
+  font-size: var(--fs-sm);
+  color: var(--fg-mute);
+
+  // Reem Kufi gets cramped this small; the text face reads better.
+  &.name-ar {
+    font-family: var(--ff-text);
+    font-weight: 500;
+  }
+}
+
+.ingredient__origin {
+  grid-area: origin;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+
+  .icon {
+    inline-size: 1rem;
+    block-size: 1rem;
+    color: var(--c-clay);
+  }
+}
+
+.ingredient__use {
+  grid-area: use;
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+}
+
+.ingredient__km {
+  grid-area: km;
+  font-size: var(--fs-sm);
+  color: var(--fg-mute);
+  text-align: end;
+  white-space: nowrap;
+
+  .num {
+    font-family: var(--ff-display);
+    font-size: var(--fs-md);
+    color: var(--fg);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Saudi roots
+// ---------------------------------------------------------------------------
+.roots__grid {
+  display: grid;
+  gap: var(--space-xl) var(--space-l);
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include mq(xl) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.region {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: var(--space-s);
+  padding-block-start: var(--space-m);
+  border-block-start: 2px solid var(--fg);
+}
+
+.region__compass {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-clay);
+
+  &:lang(en) {
+    font-size: var(--fs-2xs);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+}
+
+// Compass arrows are geographic, so they are never mirrored for RTL.
+.region__arrow {
+  inline-size: 0.75rem;
+  block-size: 0.7rem;
+  background: currentColor;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+  .region--najd & {
+    inline-size: 0.6rem;
+    block-size: 0.6rem;
+    border-radius: 50%;
+    clip-path: none;
+  }
+
+  .region--hijaz & {
+    rotate: -90deg;
+  }
+
+  .region--south & {
+    rotate: 180deg;
+  }
+
+  .region--east & {
+    rotate: 90deg;
+  }
+}
+
+.region__name {
+  font-size: var(--fs-h2);
+  line-height: 1.25;
+
+  &:lang(en) {
+    line-height: 1.05;
+  }
+}
+
+.region__text {
+  color: var(--fg-soft);
+  max-inline-size: 34ch;
+}
+
+.region__dishes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-block-start: var(--space-2xs);
+
+  li {
+    padding: 0.2rem 0.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-pill);
+    font-size: var(--fs-xs);
+    line-height: 1.6;
+  }
+}
+
+.roots__link {
+  margin-block-start: var(--space-2xl);
+}
+
+// ---------------------------------------------------------------------------
+// Hospitality
+// ---------------------------------------------------------------------------
+.hosting__grid {
+  display: grid;
+  gap: var(--space-3xl);
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(3rem, 7vw, 8rem);
+    align-items: center;
+  }
+}
+
+.hosting__media {
+  padding-block-end: var(--space-xl);
+}
+
+.hosting__figure--detail .photo {
+  border-color: var(--c-date);
+}
+
+.rituals {
+  display: grid;
+}
+
+.ritual {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.3rem var(--space-s);
+  padding-block: var(--space-m);
+  border-block-start: 1px solid var(--line);
+
+  @include mq(md) {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+}
+
+.ritual__num {
+  grid-row: span 2;
+  padding-block-start: 0.45rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-saffron);
+}
+
+.ritual__title {
+  font-size: var(--fs-h4);
+}
+
+.ritual__text {
+  color: var(--fg-soft);
+  max-inline-size: 46ch;
+}
+
+// ---------------------------------------------------------------------------
+// The rooms
+// ---------------------------------------------------------------------------
+.rooms__media {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-m) var(--space-l);
+  align-items: start;
+}
+
+.rooms__figure--main {
+  grid-column: 1 / -1;
+
+  .photo {
+    aspect-ratio: 4 / 3;
+
+    @include mq(md) {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  @include mq(md) {
+    grid-column: 1 / 9;
+  }
+}
+
+.rooms__figure--detail {
+  grid-column: 5 / -1;
+
+  .photo {
+    aspect-ratio: 3 / 4;
+  }
+
+  @include mq(md) {
+    grid-column: 9 / -1;
+    margin-block-start: clamp(4rem, 12vw, 11rem);
+  }
+}
+
+.rooms__points {
+  display: grid;
+  gap: var(--space-l);
+  margin-block-start: var(--space-2xl);
+
+  @include mq(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.rooms__point {
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--line-strong);
+}
+
+.rooms__point-title {
+  font-size: var(--fs-h4);
+}
+
+.rooms__point-text {
+  color: var(--fg-soft);
+  font-size: var(--fs-sm);
+  max-inline-size: 38ch;
+}
+
+// ---------------------------------------------------------------------------
+// Timeline: stops along a dotted route
+// ---------------------------------------------------------------------------
+.timeline__track {
+  --marker: 1rem;
+  --gap: var(--space-xl);
+  --route: radial-gradient(circle, var(--c-clay) 1.5px, transparent 2px);
+
+  display: grid;
+  gap: var(--gap);
+
+  @include mq(md) {
+    --gap: var(--space-l);
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stop {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
+  padding-inline-start: calc(var(--marker) + var(--space-m));
+
+  // Dotted route from this stop to the next one.
+  &:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    inset-block: 0.85rem calc(var(--gap) * -1 - 0.85rem);
+    inset-inline-start: calc(var(--marker) / 2 - 4px);
+    inline-size: 8px;
+    background: var(--route) center top / 8px 11px repeat-y;
+  }
+
+  // The last leg leads somewhere not yet announced.
+  &:nth-last-child(2)::before {
+    opacity: 0.4;
+  }
+
+  @include mq(md) {
+    padding-inline-start: 0;
+    padding-block-start: calc(var(--marker) + var(--space-m));
+
+    &:not(:last-child)::before {
+      inset-block: calc(var(--marker) / 2 - 4px) auto;
+      inset-inline: var(--marker) calc(var(--gap) * -1);
+      inline-size: auto;
+      block-size: 8px;
+      background: var(--route) left center / 11px 8px repeat-x;
+    }
+  }
+}
+
+.stop__marker {
+  position: absolute;
+  inset-block-start: 0.35rem;
+  inset-inline-start: 0;
+  display: grid;
+  place-items: center;
+  inline-size: var(--marker);
+  block-size: var(--marker);
+  border-radius: 50%;
+  background: var(--c-clay);
+  box-shadow: 0 0 0 6px var(--bg);
+
+  @include mq(md) {
+    inset-block-start: 0;
+  }
+}
+
+.stop--soon .stop__marker {
+  inset-block-start: -0.2rem;
+  inset-inline-start: -0.45rem;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 1.5px dashed var(--c-clay);
+  background: var(--bg);
+  font-family: var(--ff-display);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-clay);
+
+  @include mq(md) {
+    inset-block-start: -0.5rem;
+    inset-inline-start: -0.5rem;
+  }
+}
+
+.stop__year {
+  font-family: var(--ff-display);
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  color: var(--c-clay);
+
+  &:lang(en) {
+    font-style: italic;
+  }
+}
+
+.stop__title {
+  font-size: var(--fs-h4);
+}
+
+.stop__text {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  max-inline-size: 30ch;
+}
+
+.stop--soon {
+  .stop__title,
+  .stop__text {
+    color: var(--fg-mute);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Closing invitation
+// ---------------------------------------------------------------------------
+.about-close__inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-m);
+  text-align: center;
+}
+
+.about-close__rule {
+  inline-size: 7rem;
+}
+
+.about-close__title {
+  font-size: var(--fs-h1);
+  line-height: 1.3;
+  text-wrap: balance;
+
+  &:lang(en) {
+    line-height: 1.02;
+  }
+}
+
+.about-close__text {
+  max-inline-size: 44ch;
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  color: var(--fg-soft);
+
+  &:lang(en) {
+    line-height: 1.55;
+  }
+}
+
+.about-close__ctas {
+  justify-content: center;
+  margin-block-start: var(--space-xs);
+}
+
+// ---------------------------------------------------------------------------
+// Photography credits
+// ---------------------------------------------------------------------------
+.credits {
+  padding-block: var(--space-xl) calc(var(--space-2xl) + 4rem);
+}
+
+.credits__inner {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-block-start: var(--space-l);
+  border-block-start: 1px solid var(--line);
+  font-size: var(--fs-xs);
+  color: var(--fg-mute);
+
+  @include mq(lg) {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    column-gap: var(--space-l);
+  }
+}
+
+.credits__title {
+  font-family: var(--ff-text);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--fg);
+
+  @include mq(lg) {
+    grid-row: span 2;
+  }
+}
+
+.credits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 1.25rem;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 0.2em;
+
+    @include hover {
+      color: var(--c-clay);
+    }
+  }
+}
