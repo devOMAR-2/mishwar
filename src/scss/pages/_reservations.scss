@@ -467,7 +467,7 @@
 }
 
 .line-card__number {
-  font-family: var(--ff-display);
+  font-family: var(--ff-serif); // Latin digits: Latin display face in both languages
   font-size: var(--fs-h3);
   line-height: 1.25;
   text-decoration: none;

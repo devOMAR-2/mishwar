@@ -91,7 +91,9 @@
 
 .directory__value {
   justify-self: start;
-  font-family: var(--ff-display);
+  // Numbers and addresses are Latin: use the Latin display face in both
+  // languages rather than the Kufi's fallback Latin glyphs.
+  font-family: var(--ff-serif);
   font-size: var(--fs-h4);
   line-height: 1.3;
   text-decoration: none;
