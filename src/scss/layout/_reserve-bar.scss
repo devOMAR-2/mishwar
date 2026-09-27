@@ -11,6 +11,7 @@
   justify-content: space-between;
   gap: var(--space-s);
   padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border: 1px solid rgb(244 238 228 / 0.16); // keeps its edge over dark sections
   border-radius: var(--radius-pill);
   background: var(--c-date);
   color: var(--c-plaster);
