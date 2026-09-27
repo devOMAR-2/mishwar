@@ -68,6 +68,15 @@
   }
 }
 
+// Two-column footer: the coming-soon branch moves to its own last row so the
+// grid has no empty cells.
+.site-footer__col--soon {
+  @include mq(sm, lg) {
+    order: 1;
+    grid-column: 1 / -1;
+  }
+}
+
 .site-footer__heading {
   font-family: var(--ff-text);
   font-size: var(--fs-sm);
