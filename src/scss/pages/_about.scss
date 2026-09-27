@@ -790,6 +790,18 @@
   padding-block-end: var(--space-xl);
 }
 
+// Stacked: the heading introduces the section before the photographs.
+.hosting__content {
+  @include mq-down(lg) {
+    order: -1;
+  }
+}
+
+// Soften the bright white backdrop so it sits in the dark section.
+.hosting__figure--main img {
+  filter: sepia(0.22) saturate(0.9) brightness(0.8);
+}
+
 .hosting__figure--detail .photo {
   border-color: var(--c-date);
 }
