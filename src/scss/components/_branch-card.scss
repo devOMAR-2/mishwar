@@ -1,0 +1,112 @@
+@use '../abstracts' as *;
+
+.branch-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-m);
+}
+
+.branch-card__media {
+  aspect-ratio: 4 / 3;
+
+  img {
+    transition: scale 1.2s var(--ease-out);
+  }
+
+  @include hover {
+    img {
+      scale: 1.04;
+    }
+  }
+}
+
+.branch-card__body {
+  display: grid;
+  justify-items: start;
+  gap: 0.6rem;
+}
+
+.branch-card__district {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--fg-mute);
+
+  .icon {
+    inline-size: 1rem;
+    block-size: 1rem;
+    color: var(--c-clay);
+  }
+}
+
+.branch-card__name {
+  font-size: var(--fs-h3);
+}
+
+.branch-card__address {
+  font-size: var(--fs-sm);
+  color: var(--fg-soft);
+  max-inline-size: 38ch;
+}
+
+.branch-card__summary {
+  color: var(--fg-soft);
+  max-inline-size: 36ch;
+}
+
+.branch-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.75rem;
+  margin-block-start: var(--space-2xs);
+}
+
+.branch-card__call {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-block-size: 2.75rem;
+  padding-inline: 0.25rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+
+  .icon {
+    inline-size: 1.05rem;
+    block-size: 1.05rem;
+  }
+
+  @include hover {
+    color: var(--c-clay);
+  }
+}
+
+// Coming-soon card: an empty plot, waiting.
+.branch-card--soon {
+  align-content: stretch;
+  gap: 0;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius-s);
+  padding: var(--space-l);
+  min-block-size: 18rem;
+  background:
+    radial-gradient(circle at 1px 1px, rgb(33 26 21 / 0.12) 1px, transparent 0) 0 0 / 18px 18px;
+
+  .branch-card__body {
+    align-self: end;
+    gap: var(--space-s);
+  }
+}
+
+.branch-card__soon-art {
+  color: var(--c-clay);
+  margin-block-end: auto;
+
+  .tri-rule {
+    display: block;
+    inline-size: 6.5rem;
+  }
+}

@@ -1,0 +1,115 @@
+@use '../abstracts' as *;
+
+// Shared dish typography (cards and menu rows).
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dish-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-m);
+  position: relative;
+}
+
+.dish-card__media {
+  aspect-ratio: 4 / 5;
+
+  .dish-card__img {
+    transition: scale 1.2s var(--ease-out);
+  }
+}
+
+@include hover {
+  .dish-card:hover .dish-card__img {
+    scale: 1.045;
+  }
+}
+
+.dish-card__index {
+  position: absolute;
+  inset-block-start: 0.9rem;
+  inset-inline-start: 0.9rem;
+  z-index: 1;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: rgb(244 238 228 / 0.9);
+  color: var(--c-ink);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.dish-card__body {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.dish-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-s);
+}
+
+.dish-card__name {
+  display: grid;
+  gap: 0.15rem;
+  font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.75rem);
+  line-height: 1.3;
+
+  &:lang(en) {
+    line-height: 1.1;
+  }
+}
+
+.dish-card__name__secondary {
+  font-size: 0.95rem;
+  color: var(--fg-mute);
+  line-height: 1.4;
+
+  &.name-ar {
+    font-size: 1.05rem;
+  }
+}
+
+.dish-card__desc {
+  font-size: var(--fs-sm);
+  line-height: 1.75;
+  color: var(--fg-soft);
+
+  &:lang(en) {
+    line-height: 1.55;
+  }
+}
+
+// Price
+.dish-card__price,
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.1rem;
+  flex-shrink: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  padding-block-start: 0.25rem;
+}
+
+.dish-card__price__amount,
+.price__amount {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.dish-card__price__currency,
+.price__currency {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--fg-mute);
+  letter-spacing: 0.04em;
+}
