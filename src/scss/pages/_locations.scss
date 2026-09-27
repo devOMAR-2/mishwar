@@ -402,6 +402,20 @@
   }
 }
 
+// Phones: fewer, roomier labels so nothing is clipped or covered.
+@include mq-down(md) {
+  .rmap__place,
+  .rmap__road-label--wide {
+    display: none;
+  }
+
+  .rmap__pin {
+    --offset: 0.6rem;
+
+    padding: 0.25rem 0.6rem;
+  }
+}
+
 .rmap__foot {
   display: flex;
   flex-wrap: wrap;

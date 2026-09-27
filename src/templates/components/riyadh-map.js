@@ -73,8 +73,10 @@ const ROADS = {
 };
 
 const ROAD_LABELS = [
-  { key: 'kingFahd', at: [46.6125, 24.872], angle: 70 },
-  { key: 'kingSalman', at: [46.585, 24.835], angle: 0 },
+  // `wide`: only on wider maps — on phones these run off the top edge or sit
+  // under the Al Yasmin pin.
+  { key: 'kingFahd', at: [46.6125, 24.872], angle: 70, wide: true },
+  { key: 'kingSalman', at: [46.585, 24.835], angle: 0, wide: true },
   { key: 'northernRing', at: [46.69, 24.7755], angle: 1, minor: true },
   { key: 'easternRing', at: [46.7615, 24.735], angle: 76, minor: true },
   { key: 'airport', at: [46.71, 24.873], angle: -85, minor: true },
@@ -124,7 +126,7 @@ export function riyadhMap(ctx, branches) {
 
       <div class="rmap__labels" aria-hidden="true">
         ${ROAD_LABELS.map(
-          (l) => html`<span class="rmap__road-label${l.minor ? ' rmap__road-label--minor' : ''}${l.wadi ? ' rmap__road-label--wadi' : ''}" style="${percent(l.at)};--angle:${l.angle}deg">${ctx.t(c.roads[l.key])}</span>`
+          (l) => html`<span class="rmap__road-label${l.minor ? ' rmap__road-label--minor' : ''}${l.wadi ? ' rmap__road-label--wadi' : ''}${l.wide ? ' rmap__road-label--wide' : ''}" style="${percent(l.at)};--angle:${l.angle}deg">${ctx.t(c.roads[l.key])}</span>`
         )}
         <span class="rmap__place" style="${percent(OLAYA)}">${ctx.t(c.places.olaya)}</span>
         <span class="rmap__airport" style="${percent(AIRPORT)}">↑ ${ctx.t(c.places.airport)}</span>
