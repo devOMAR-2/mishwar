@@ -34,28 +34,39 @@
   border-block-start: 1px solid var(--line-strong);
 }
 
+// Label and value side by side — except on small laptops, where the directory
+// shares the hero with the intro and the label column would be squeezed.
+@mixin directory-row {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+
+  .directory__label {
+    grid-row: 1;
+  }
+
+  .directory__note {
+    grid-row: 2;
+  }
+
+  .directory__value {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-self: end;
+  }
+}
+
 .directory__item {
   display: grid;
   gap: 0.15rem 1.5rem;
   padding-block: 1.1rem;
   border-block-end: 1px solid var(--line);
 
-  @include mq(sm) {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
+  @include mq(sm, lg) {
+    @include directory-row;
+  }
 
-    .directory__label {
-      grid-row: 1;
-    }
-
-    .directory__note {
-      grid-row: 2;
-    }
-
-    .directory__value {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
+  @include mq(xl) {
+    @include directory-row;
   }
 }
 
@@ -89,10 +100,6 @@
   transition:
     background-size var(--dur-med) var(--ease-out),
     color var(--dur-fast);
-
-  @include mq(sm) {
-    justify-self: end;
-  }
 
   @include hover {
     color: var(--accent);
