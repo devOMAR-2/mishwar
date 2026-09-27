@@ -297,6 +297,13 @@
   }
 }
 
+@include mq-down(md) {
+  .chapter:nth-child(odd) .chapter__figure--main .about-caption,
+  .hosting__figure--main .about-caption {
+    padding-inline-end: 24%;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Pull quote
 // ---------------------------------------------------------------------------
