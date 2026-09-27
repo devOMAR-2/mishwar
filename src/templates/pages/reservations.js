@@ -336,7 +336,7 @@ function info(ctx) {
       <div class="booking-info__grid">
         <figure class="booking-info__media">
           <div class="photo booking-info__photo" data-reveal="image">
-            ${picture(ctx, 'gathering-2', { sizes: '(min-width: 1024px) 36vw, 100vw' })}
+            ${picture(ctx, 'interior-table', { sizes: '(min-width: 1024px) 36vw, 100vw' })}
           </div>
           <figcaption class="booking-info__caption">${ctx.t(i.caption)}</figcaption>
         </figure>

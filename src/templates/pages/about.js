@@ -308,7 +308,7 @@ export default {
       eyebrow: ctx.t(about.hero.eyebrow),
       title: raw(ctx.t(about.hero.title)),
       lede: ctx.t(about.hero.lede),
-      image: 'gathering-2',
+      image: 'exterior',
       imageAlt: ctx.t(about.hero.imageAlt),
       className: 'about-hero',
     })}

@@ -17,8 +17,8 @@ export const about = {
       en: 'We opened a small room in Al Yasmin in 2022 with one idea: cook the food every Saudi already knows, by the old rules, and serve it in a restaurant that does it justice.',
     },
     imageAlt: {
-      ar: 'سفرة مليانة أطباق سعودية للمشاركة في وسط الطاولة',
-      en: 'A table spread with Saudi dishes for sharing',
+      ar: 'واجهة مِشوار في الياسمين وقت المغرب: جدران طينية وفتحات مثلثة وشرفة خشبية تضيئها الفوانيس',
+      en: 'Mishwar’s Al Yasmin facade at maghrib: earthen walls, triangular openings and a lantern-lit wooden balcony',
     },
   },
 
@@ -81,7 +81,7 @@ export const about = {
           },
         ],
         images: [
-          { key: 'exterior', caption: { ar: 'مدخل الياسمين وقت المغرب', en: 'The Al Yasmin entrance at maghrib' } },
+          { key: 'branch-yasmin', caption: { ar: 'صالة الياسمين الأولى', en: 'The first room in Al Yasmin' } },
           { key: 'interior-bar', caption: { ar: 'ركن القهوة، أول ما تدخل', en: 'The coffee counter, just inside the door' } },
         ],
       },
