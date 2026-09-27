@@ -546,6 +546,10 @@
 
 .philosophy__photo {
   aspect-ratio: 4 / 5;
+
+  @include mq(md, lg) {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .philosophy__caption {
@@ -648,6 +652,18 @@
 
   .gallery__photo {
     aspect-ratio: 4 / 3;
+  }
+}
+
+// Tablet: the room and plating photos share a row instead of stacking.
+@include mq(md, lg) {
+  .gallery__item--room,
+  .gallery__item--plating {
+    grid-column: span 1;
+  }
+
+  :is(.gallery__item--room, .gallery__item--plating) .gallery__photo {
+    aspect-ratio: 3 / 4;
   }
 }
 
