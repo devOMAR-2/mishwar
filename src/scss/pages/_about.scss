@@ -540,6 +540,22 @@
   fill: var(--c-clay);
 }
 
+// Phones: the whole diagram is scaled down, so its type is scaled up to stay
+// readable and the degree labels step aside.
+@include mq-down(sm) {
+  .origins-map__place text {
+    font-size: 14px;
+  }
+
+  .origins-map__nums {
+    font-size: 12px;
+  }
+
+  .origins-map__degrees {
+    display: none;
+  }
+}
+
 .origins-map__riyadh {
   circle {
     fill: var(--c-clay);
