@@ -1,0 +1,13 @@
+node_modules/
+dist/
+
+# Full-resolution photography originals (~26 MB). The optimised WebP
+# variants in src/assets/images are committed.
+src/assets/images/_source/
+
+.DS_Store
+Thumbs.db
+*.log
+
+# Local tooling
+.claude/
