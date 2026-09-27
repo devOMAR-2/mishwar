@@ -656,7 +656,6 @@
 
   .gallery__item--plating {
     grid-column: 10 / 13;
-    margin-block-start: calc(var(--space-2xl) * -1);
 
     .gallery__photo {
       aspect-ratio: 3 / 4;
