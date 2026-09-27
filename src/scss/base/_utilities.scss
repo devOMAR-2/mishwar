@@ -61,6 +61,7 @@ main:focus {
 .img {
   background-color: var(--img-placeholder, var(--c-plaster-3));
   object-fit: cover;
+  object-position: var(--img-pos, 50% 50%);
   inline-size: 100%;
   block-size: 100%;
 }

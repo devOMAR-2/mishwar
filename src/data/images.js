@@ -207,6 +207,7 @@ export const imageContent = {
       ar: 'قطعة كنافة بالقشطة يغمرها الفستق المطحون، وحولها حبات فستق',
       en: 'A slice of kunafa with cream, blanketed in ground pistachio, whole pistachios alongside',
     },
+    position: '50% 85%',
     credit: stock('Malicki M Beser'),
   },
   'dish-luqaimat': {
