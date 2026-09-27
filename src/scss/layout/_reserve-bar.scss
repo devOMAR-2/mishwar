@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+// Mobile-only floating booking bar.
+.reserve-bar {
+  position: fixed;
+  inset-inline: 0.75rem;
+  inset-block-end: max(0.75rem, env(safe-area-inset-bottom));
+  z-index: var(--z-reserve-bar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-date);
+  color: var(--c-plaster);
+  box-shadow: var(--shadow-l);
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    opacity var(--dur-med) var(--ease-out);
+
+  [dir='rtl'] & {
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
+  }
+
+  &[data-state='hidden'] {
+    transform: translateY(calc(100% + 1.5rem));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.reserve-bar__text {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.3;
+}

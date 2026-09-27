@@ -1,0 +1,187 @@
+@use '../abstracts' as *;
+
+// Full-screen mobile navigation, built on <dialog> for free focus trapping,
+// Escape handling and an inert background.
+.nav-overlay {
+  --bg: var(--c-date);
+  --fg: var(--c-plaster);
+  --fg-soft: rgb(244 238 228 / 0.72);
+  --line: rgb(244 238 228 / 0.16);
+  --focus-color: var(--c-saffron);
+
+  position: fixed;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100dvh;
+  background: var(--bg);
+  color: var(--fg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    background: rgb(42 30 23 / 0.4);
+  }
+
+  &[open] {
+    display: block;
+  }
+
+  @include motion {
+    &[open] {
+      animation: overlay-in 0.5s var(--ease-out);
+    }
+
+    &[open] .nav-overlay__list li {
+      animation: overlay-link-in 0.7s var(--ease-out) both;
+      animation-delay: calc(0.08s + var(--i) * 0.05s);
+    }
+
+    &.is-closing {
+      animation: overlay-out 0.3s var(--ease-in-out) forwards;
+    }
+  }
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+  }
+}
+
+@keyframes overlay-out {
+  to {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+@keyframes overlay-link-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+.nav-overlay__inner {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+  padding: 0 var(--gutter) max(var(--space-l), env(safe-area-inset-bottom));
+}
+
+.nav-overlay__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: var(--header-h);
+
+  .wordmark__inner {
+    font-size: 0.92rem;
+  }
+
+  .wordmark__en::before {
+    background: var(--c-saffron);
+  }
+}
+
+.nav-overlay__close {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  margin-inline-end: -0.5rem;
+  border-radius: var(--radius-pill);
+
+  .icon {
+    inline-size: 1.6rem;
+    block-size: 1.6rem;
+  }
+}
+
+.nav-overlay__nav {
+  padding-block: clamp(1.5rem, 6vh, 3.5rem);
+}
+
+.nav-overlay__list {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.nav-overlay__link {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.35rem;
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 1.4rem + 3.6vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color var(--dur-fast);
+
+  &:lang(en) {
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  &[aria-current='page'] {
+    color: var(--c-saffron);
+  }
+
+  @include hover {
+    color: var(--c-saffron);
+  }
+}
+
+.nav-overlay__num {
+  font-family: var(--ff-text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--fg-soft);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  min-inline-size: 1.5rem;
+}
+
+.nav-overlay__meta {
+  margin-block-start: auto;
+  display: grid;
+  gap: var(--space-l);
+  padding-block-start: var(--space-l);
+  border-block-start: 1px solid var(--line);
+
+  @include mq(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.nav-overlay__branch-name {
+  font-weight: 600;
+  margin-block-end: 0.4rem;
+}
+
+.nav-overlay__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-s);
+
+  @include mq(sm) {
+    grid-column: 1 / -1;
+  }
+}
+
+.nav-overlay__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}

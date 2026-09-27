@@ -1,0 +1,173 @@
+@use '../abstracts' as *;
+
+.site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-header);
+  block-size: var(--header-h);
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    background-color var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out);
+
+  &[data-scrolled] {
+    background-color: rgb(244 238 228 / 0.96);
+    box-shadow: 0 1px 0 var(--line);
+
+    @supports (backdrop-filter: blur(1px)) {
+      background-color: rgb(244 238 228 / 0.86);
+      backdrop-filter: blur(16px) saturate(1.3);
+    }
+  }
+
+  &[data-hidden] {
+    transform: translateY(-100%);
+  }
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  block-size: 100%;
+}
+
+.site-header .wordmark__inner {
+  font-size: 0.92rem;
+
+  @include mq(lg) {
+    font-size: 1rem;
+  }
+}
+
+.site-nav {
+  display: none;
+
+  @include mq(lg) {
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+.site-nav__list {
+  display: flex;
+  gap: clamp(1.25rem, 2.6vw, 2.75rem);
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--fg);
+  transition: color var(--dur-fast);
+
+  &:lang(en) {
+    font-size: 0.9375rem;
+  }
+
+  // Active marker: the brand triangle, sitting under the label.
+  &::after {
+    content: '';
+    position: absolute;
+    inset-block-end: -0.2rem;
+    inset-inline-start: 50%;
+    inline-size: 0.5rem;
+    block-size: 0.42rem;
+    background: var(--c-clay);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    translate: -50% 0.3rem;
+    opacity: 0;
+    transition:
+      opacity var(--dur-fast),
+      translate var(--dur-med) var(--ease-out);
+  }
+
+  [dir='rtl'] &::after {
+    translate: 50% 0.3rem;
+  }
+
+  @include hover {
+    color: var(--c-clay);
+  }
+
+  &[aria-current='page'] {
+    color: var(--c-clay);
+
+    &::after {
+      opacity: 1;
+      translate: -50% 0;
+    }
+
+    [dir='rtl'] &::after {
+      translate: 50% 0;
+    }
+  }
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 1.4vw, 1.25rem);
+}
+
+.site-header .lang-switch {
+  display: none;
+
+  @include mq(md) {
+    display: inline-flex;
+  }
+}
+
+.site-header__cta {
+  display: none;
+
+  @include mq(sm) {
+    display: inline-flex;
+  }
+}
+
+.nav-toggle {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  margin-inline-end: -0.5rem;
+  border-radius: var(--radius-pill);
+
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.nav-toggle__bars {
+  position: relative;
+  inline-size: 1.5rem;
+  block-size: 0.6rem;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    block-size: 1.5px;
+    background: currentColor;
+    border-radius: 2px;
+  }
+
+  &::before {
+    inset-block-start: 0;
+  }
+
+  &::after {
+    inset-block-end: 0;
+    inset-inline-start: 0.5rem;
+  }
+
+  span {
+    display: none;
+  }
+}
