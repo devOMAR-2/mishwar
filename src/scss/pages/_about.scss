@@ -9,6 +9,7 @@
   font-size: var(--fs-xs);
   line-height: 1.5;
   color: var(--fg-mute);
+  text-wrap: balance;
 
   &::before {
     content: '';
@@ -301,6 +302,11 @@
   .chapter:nth-child(odd) .chapter__figure--main .about-caption,
   .hosting__figure--main .about-caption {
     padding-inline-end: 24%;
+  }
+
+  // The small overlapping photos are too narrow for a caption on phones.
+  :is(.chapter__figure--detail, .hosting__figure--detail) .about-caption {
+    display: none;
   }
 }
 
