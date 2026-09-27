@@ -58,6 +58,6 @@
   $half: math.div($h, 2);
   background-color: currentColor;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 #{$w} #{$h}'%3E%3Cpath d='M0 #{$h}L#{$half} 0L#{$h} #{$h}Z'/%3E%3C/svg%3E")
-    repeat-x left bottom / #{$w}px #{$h}px;
+    space no-repeat left bottom / #{$w}px #{$h}px;
   block-size: $size;
 }
