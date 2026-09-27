@@ -101,7 +101,7 @@ export const about = {
         ],
         images: [
           { key: 'hands-dough', caption: { ar: 'عجينة القرصان، باليد', en: 'Qursan dough, by hand' } },
-          { key: 'cooking-fire', caption: { ar: 'الجمر يولّع قبل الخدمة بساعتين', en: 'Coals lit two hours before service' } },
+          { key: 'dish-bread', caption: { ar: 'خبز التنور، طالع للتو', en: 'Tannour bread, straight from the oven' } },
         ],
       },
     ],
@@ -353,7 +353,7 @@ export const about = {
     ],
     captions: {
       main: { ar: 'صالة قرطبة', en: 'The Qurtubah dining room' },
-      plating: { ar: 'على الطاولة خلال دقايق', en: 'At the table within minutes' },
+      grill: { ar: 'من الجمر للطاولة خلال دقايق', en: 'From the coals to the table in minutes' },
     },
   },
 

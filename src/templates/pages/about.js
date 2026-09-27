@@ -204,12 +204,12 @@ function rooms(ctx) {
       ${sectionHead({ eyebrow: ctx.t(c.eyebrow), title: raw(ctx.t(c.title)), id: 'rooms-title' })}
       <div class="rooms__media">
         <figure class="rooms__figure rooms__figure--main">
-          <div class="photo" data-reveal="image">${picture(ctx, 'interior-main', { sizes: '(min-width: 1024px) 62vw, 100vw' })}</div>
+          <div class="photo" data-reveal="image">${picture(ctx, 'branch-qurtubah', { sizes: '(min-width: 1024px) 62vw, 100vw', position: '50% 75%' })}</div>
           <figcaption class="about-caption">${ctx.t(c.captions.main)}</figcaption>
         </figure>
         <figure class="rooms__figure rooms__figure--detail">
-          <div class="photo" data-reveal="image">${picture(ctx, 'chef-plating', { sizes: '(min-width: 1024px) 24vw, 50vw' })}</div>
-          <figcaption class="about-caption">${ctx.t(c.captions.plating)}</figcaption>
+          <div class="photo" data-reveal="image">${picture(ctx, 'dish-grill', { sizes: '(min-width: 1024px) 24vw, 50vw' })}</div>
+          <figcaption class="about-caption">${ctx.t(c.captions.grill)}</figcaption>
         </figure>
       </div>
       <ul class="rooms__points" role="list" data-reveal-stagger>
