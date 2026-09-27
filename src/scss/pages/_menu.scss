@@ -1234,6 +1234,24 @@
   background: var(--c-clay);
   color: var(--c-plaster);
 
+  // On its own row at tablet widths: text and button side by side.
+  @include mq(md, lg) {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: var(--space-l);
+
+    > :not(.btn) {
+      grid-column: 1;
+    }
+
+    .btn {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      margin-block-start: 0;
+    }
+  }
+
   @include mq(lg) {
     grid-column: span 4;
   }
