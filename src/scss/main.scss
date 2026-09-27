@@ -1,0 +1,32 @@
+// ---------------------------------------------------------------------------
+// Mishwar — stylesheet entry.
+// Architecture: abstracts (no output) → base → components → layout → pages.
+// ---------------------------------------------------------------------------
+
+@use 'base/fonts';
+@use 'base/root';
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/utilities';
+@use 'base/motion';
+
+@use 'components/button';
+@use 'components/wordmark';
+@use 'components/meta';
+@use 'components/dish-card';
+@use 'components/branch-card';
+@use 'components/form';
+
+@use 'layout/header';
+@use 'layout/nav-overlay';
+@use 'layout/footer';
+@use 'layout/reserve-bar';
+@use 'layout/page-hero';
+
+@use 'pages/home';
+@use 'pages/menu';
+@use 'pages/about';
+@use 'pages/locations';
+@use 'pages/reservations';
+@use 'pages/contact';
+@use 'pages/legal';
