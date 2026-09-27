@@ -1,0 +1,151 @@
+@use '../abstracts' as *;
+
+.btn {
+  --btn-bg: var(--c-clay);
+  --btn-fg: var(--c-plaster);
+  --btn-border: var(--btn-bg);
+  --btn-bg-hover: var(--c-clay-deep);
+  --btn-fg-hover: var(--btn-fg);
+  --btn-shift: 0.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-block-size: 3.25rem;
+  padding: 0.7rem 1.65rem;
+  border: 1.5px solid var(--btn-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--ff-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+
+  &:lang(en) {
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+  }
+
+  .btn__icon {
+    inline-size: 1.15em;
+    block-size: 1.15em;
+    transition: translate var(--dur-med) var(--ease-out);
+  }
+
+  @include hover {
+    background-color: var(--btn-bg-hover);
+    border-color: var(--btn-bg-hover);
+    color: var(--btn-fg-hover);
+
+    .btn__icon {
+      translate: var(--btn-shift) 0;
+    }
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &[aria-disabled='true'],
+  &:disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}
+
+[dir='rtl'] .btn,
+[dir='rtl'] .link-arrow {
+  --btn-shift: -0.25rem;
+}
+
+.btn--secondary {
+  --btn-bg: transparent;
+  --btn-fg: var(--fg);
+  --btn-border: var(--line-strong);
+  --btn-bg-hover: var(--fg);
+  --btn-fg-hover: var(--bg);
+}
+
+.btn--light {
+  --btn-bg: var(--c-plaster);
+  --btn-fg: var(--c-ink);
+  --btn-bg-hover: var(--c-saffron);
+  --btn-fg-hover: var(--c-ink);
+}
+
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--fg);
+  --btn-border: transparent;
+  --btn-bg-hover: var(--bg-alt);
+}
+
+.btn--sm {
+  min-block-size: 2.75rem;
+  padding: 0.5rem 1.2rem;
+  font-size: var(--fs-xs);
+
+  &:lang(ar) {
+    font-size: 0.875rem;
+  }
+}
+
+.btn--lg {
+  min-block-size: 3.75rem;
+  padding-inline: 2rem;
+  font-size: var(--fs-base);
+
+  &:lang(en) {
+    font-size: 1rem;
+  }
+}
+
+.btn--block {
+  inline-size: 100%;
+}
+
+// Text link with an animated underline + arrow.
+.link-arrow {
+  --btn-shift: 0.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 100% 1px;
+  padding-block-end: 0.2rem;
+  transition: color var(--dur-fast);
+
+  .icon {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+    transition: translate var(--dur-med) var(--ease-out);
+  }
+
+  @include hover {
+    color: var(--accent);
+
+    .icon {
+      translate: var(--btn-shift) 0;
+    }
+  }
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}

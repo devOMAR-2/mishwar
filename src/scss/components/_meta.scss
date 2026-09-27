@@ -1,0 +1,236 @@
+@use '../abstracts' as *;
+
+// Small, shared informational pieces: badges, hours, open status,
+// language switch and social links.
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--ff-text);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--fg-soft);
+
+  &:lang(ar) {
+    font-size: var(--fs-xs);
+  }
+
+  .icon {
+    inline-size: 1.1em;
+    block-size: 1.1em;
+  }
+}
+
+.badge--signature {
+  border-color: transparent;
+  background: var(--c-clay);
+  color: var(--c-plaster);
+}
+
+.badge--seasonal {
+  border-color: transparent;
+  background: var(--c-saffron-soft);
+  color: var(--c-ink);
+}
+
+.badge--diet {
+  color: var(--c-cardamom);
+  border-color: rgb(85 101 58 / 0.4);
+}
+
+.badge--spicy {
+  color: var(--c-chili);
+  border-color: rgb(173 53 32 / 0.35);
+}
+
+.badge--soon {
+  border-style: dashed;
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+// Opening hours
+.hours {
+  display: grid;
+  gap: 0.1rem;
+  font-size: var(--fs-sm);
+}
+
+.hours__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.35rem;
+  border-block-end: 1px dashed var(--line);
+
+  dt {
+    color: var(--fg-soft);
+  }
+
+  dd {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &.is-today {
+    dt,
+    dd {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    dt::after {
+      content: '';
+      display: inline-block;
+      inline-size: 0.4rem;
+      block-size: 0.4rem;
+      margin-inline-start: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+      vertical-align: middle;
+    }
+  }
+}
+
+.hours--compact {
+  font-size: var(--fs-xs);
+
+  .hours__row {
+    padding-block: 0.2rem;
+  }
+}
+
+.hours--footer {
+  max-inline-size: 22rem;
+  margin-block-end: var(--space-s);
+}
+
+// Live open/closed indicator
+.open-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--fg-soft);
+
+  &[data-state='open'] {
+    --dot: #3f8f4f;
+  }
+
+  &[data-state='closed'] {
+    --dot: var(--c-clay);
+  }
+}
+
+.open-status__dot {
+  position: relative;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: var(--dot, var(--fg-mute));
+  flex-shrink: 0;
+
+  @include motion {
+    [data-state='open'] > &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: inherit;
+      animation: status-pulse 2.4s var(--ease-out) infinite;
+    }
+  }
+}
+
+@keyframes status-pulse {
+  from {
+    opacity: 0.7;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 3;
+  }
+}
+
+.open-status__text strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+// Language switch
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-block-size: 2.75rem;
+  padding-inline: 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--fg);
+  transition: color var(--dur-fast);
+
+  &:lang(ar) {
+    font-family: var(--ff-text);
+  }
+
+  .lang-switch__icon {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+    opacity: 0.7;
+  }
+
+  @include hover {
+    color: var(--accent);
+  }
+}
+
+.lang-switch--overlay,
+.lang-switch--footer {
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--line-strong, rgb(244 238 228 / 0.3));
+  border-radius: var(--radius-pill);
+  min-block-size: 2.5rem;
+}
+
+// Social icons
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social__link {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--fg);
+  transition:
+    background-color var(--dur-fast),
+    color var(--dur-fast),
+    border-color var(--dur-fast);
+
+  .icon {
+    inline-size: 1.2rem;
+    block-size: 1.2rem;
+  }
+
+  @include hover {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--bg);
+  }
+}

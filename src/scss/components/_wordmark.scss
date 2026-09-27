@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+// Temporary typographic wordmark. The lockup is fixed RTL so it reads the same
+// on Arabic and English pages: «مِشوار ▴ MISHWAR».
+.wordmark {
+  display: inline-flex;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--radius-xs);
+}
+
+.wordmark__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  direction: rtl;
+  font-size: 1rem;
+}
+
+.wordmark__ar {
+  font-family: var(--ff-kufi);
+  font-weight: 700;
+  font-size: 1.85em;
+  line-height: 1;
+  letter-spacing: 0;
+  translate: 0 -0.08em;
+}
+
+.wordmark__en {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--ff-text);
+  font-size: 0.64em;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  direction: ltr;
+
+  &::before {
+    content: '';
+    inline-size: 0.75em;
+    block-size: 0.65em;
+    background: var(--c-clay);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+}
+
+.wordmark--lg .wordmark__inner {
+  font-size: clamp(1.4rem, 1rem + 1.6vw, 2.2rem);
+}
+
+.surface-dark .wordmark__en::before {
+  background: var(--c-saffron);
+}
