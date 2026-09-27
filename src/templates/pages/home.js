@@ -101,7 +101,7 @@ function signatureDishes(ctx) {
         <a class="link-arrow signatures__all" href="${ctx.url('menu')}" data-reveal>${ctx.t(ui.cta.fullMenu)}${icon('arrow')}</a>
       </div>
       <div class="signatures__rail" data-reveal-stagger>
-        ${signatures.map((item, index) => dishCard(ctx, item, { index, className: 'signatures__card' }))}
+        ${signatures.map((item, index) => dishCard(ctx, item, { index, className: 'signatures__card', sizes: '(min-width: 1024px) 22rem, (min-width: 768px) 44vw, 80vw' }))}
       </div>
     </div>
   </section>`;
