@@ -49,9 +49,9 @@ function hero(ctx) {
   <section class="menu-hero" aria-labelledby="page-title">
     <div class="container menu-hero__grid">
       <div class="menu-hero__copy">
-        <p class="eyebrow" data-reveal>${ctx.t(c.eyebrow)}</p>
-        <h1 class="menu-hero__title" id="page-title" data-reveal>${raw(ctx.t(c.title))}</h1>
-        <p class="menu-hero__lede" data-reveal>${ctx.t(c.lede)}</p>
+        <p class="eyebrow" data-enter="1">${ctx.t(c.eyebrow)}</p>
+        <h1 class="menu-hero__title" id="page-title" data-enter="2">${raw(ctx.t(c.title))}</h1>
+        <p class="menu-hero__lede" data-enter="3">${ctx.t(c.lede)}</p>
         <nav class="menu-index" aria-label="${ctx.t(c.indexLabel)}" data-reveal>
           <ol class="menu-index__list" role="list">
             ${categories.map(

@@ -54,6 +54,20 @@
     }
   }
 
+  // First-screen headlines (inner-page heroes) rise in with CSS only, so the
+  // LCP text never waits on the reveal script.
+  [data-enter] {
+    animation: enter-rise 0.9s var(--ease-out) both;
+  }
+
+  [data-enter='2'] {
+    animation-delay: 0.08s;
+  }
+
+  [data-enter='3'] {
+    animation-delay: 0.16s;
+  }
+
   // Cross-document page transitions (progressive enhancement).
   @view-transition {
     navigation: auto;
@@ -69,6 +83,13 @@
 
   .site-header {
     view-transition-name: site-header;
+  }
+}
+
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
   }
 }
 

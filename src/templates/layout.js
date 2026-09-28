@@ -12,6 +12,9 @@ const PRELOAD_FONTS = {
   en: ['fraunces-latin-300-700.woff2', 'plex-sans-arabic-latin-400.woff2'],
 };
 
+/** Static imports of main.js, preloaded so the module graph resolves in one round trip. */
+const MODULE_PRELOADS = ['/assets/js/core/reveal.js', '/assets/js/core/hours-today.js', '/assets/js/utils/hours.js'];
+
 /**
  * Full HTML document shell shared by every page.
  * `page` is a page module (see src/templates/pages), `assets` holds cache-busted URLs.
@@ -37,6 +40,7 @@ export function layout(ctx, page, { assets }) {
   ${meta.preloadImage ? html`<link rel="preload" as="image" imagesrcset="${meta.preloadImage.srcset}" imagesizes="${meta.preloadImage.sizes}" fetchpriority="high">` : ''}
   <link rel="stylesheet" href="${assets.css}">
   <script type="module" src="${assets.js}"></script>
+  ${MODULE_PRELOADS.map((m) => html`<link rel="modulepreload" href="${m}">`)}
   ${jsonLd(page.jsonLd?.(ctx))}
 </head>
 <body class="page page--${ctx.pageId}" data-page="${ctx.pageId}">

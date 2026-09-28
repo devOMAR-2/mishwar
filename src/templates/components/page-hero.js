@@ -9,9 +9,9 @@ export function pageHero(ctx, { eyebrow, title, lede, image, imageAlt, className
   return html`
   <section class="${cx('page-hero', image && 'page-hero--image', className)}" aria-labelledby="page-title">
     <div class="container page-hero__inner">
-      ${eyebrow ? html`<p class="eyebrow page-hero__eyebrow" data-reveal>${eyebrow}</p>` : ''}
-      <h1 class="page-hero__title" id="page-title" data-reveal>${title}</h1>
-      ${lede ? html`<p class="page-hero__lede" data-reveal>${lede}</p>` : ''}
+      ${eyebrow ? html`<p class="eyebrow page-hero__eyebrow" data-enter="1">${eyebrow}</p>` : ''}
+      <h1 class="page-hero__title" id="page-title" data-enter="2">${title}</h1>
+      ${lede ? html`<p class="page-hero__lede" data-enter="3">${lede}</p>` : ''}
       ${children ?? ''}
     </div>
     ${image
