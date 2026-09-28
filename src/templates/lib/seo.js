@@ -10,6 +10,7 @@ const DAY_SCHEMA = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fri
 export function seoHead(ctx, { title, description, noindex = false }) {
   const canonical = ctx.pageId === 'notFound' ? null : ctx.absoluteUrl(ctx.pageId);
   const ogImage = `${site.url}/assets/social/og-${ctx.lang}.jpg`;
+  const ogImageAlt = `${ctx.t(site.name)} — ${ctx.t(site.tagline)}`;
 
   return html`
     <title>${title}</title>
@@ -28,12 +29,14 @@ export function seoHead(ctx, { title, description, noindex = false }) {
     <meta property="og:image" content="${ogImage}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${ogImageAlt}">
     <meta property="og:locale" content="${LOCALES[ctx.lang]}">
     <meta property="og:locale:alternate" content="${LOCALES[ctx.otherLang]}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
-    <meta name="twitter:image" content="${ogImage}">`;
+    <meta name="twitter:image" content="${ogImage}">
+    <meta name="twitter:image:alt" content="${ogImageAlt}">`;
 }
 
 /** Serialise one or more JSON-LD graphs. `<` is escaped so content can't break out of the script tag. */
@@ -55,7 +58,7 @@ export function restaurantSchema(ctx) {
     foundingDate: String(site.founded),
     email: site.contact.email,
     telephone: site.contact.phone,
-    sameAs: [],
+    sameAs: site.social.map((s) => s.url),
   };
 
   const branches = locations
@@ -65,7 +68,7 @@ export function restaurantSchema(ctx) {
       '@id': `${site.url}/#${loc.id}`,
       name: ctx.t(loc.name),
       parentOrganization: { '@id': org['@id'] },
-      url: ctx.absoluteUrl('locations'),
+      url: `${ctx.absoluteUrl('locations')}#branch-${loc.id}`,
       image: `${site.url}/assets/images/${loc.image}-1200.webp`,
       telephone: loc.phone,
       servesCuisine: site.cuisine,
