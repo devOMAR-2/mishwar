@@ -70,6 +70,11 @@
   &:lang(en) {
     line-height: 1.05;
   }
+
+  // Keep the accent phrase together so it never splits over a stray word.
+  .accent {
+    display: inline-block;
+  }
 }
 
 .section-head__intro {
