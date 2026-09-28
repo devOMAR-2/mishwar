@@ -43,9 +43,9 @@ export const privacy = {
     title: { ar: 'باختصار', en: 'In short' },
     points: [
       { ar: 'نجمع فقط ما نحتاجه للحجز أو للرد عليك.', en: 'We only collect what we need to book your table or reply to you.' },
-      { ar: 'ما نبيع بياناتك ولا نستخدمها للإعلانات.', en: 'We never sell your data or use it for advertising.' },
-      { ar: 'ما فيه ملفات تتبّع ولا أدوات تحليل في هذا الموقع.', en: 'There are no tracking cookies or analytics on this site.' },
-      { ar: 'تقدر تطلب نسخة من بياناتك أو حذفها في أي وقت.', en: 'You can ask for a copy of your data, or for it to be deleted, at any time.' },
+      { ar: 'لا نبيع بياناتك ولا نستخدمها للإعلانات.', en: 'We never sell your data or use it for advertising.' },
+      { ar: 'لا توجد ملفات تتبّع ولا أدوات تحليل في هذا الموقع.', en: 'There are no tracking cookies or analytics on this site.' },
+      { ar: 'يمكنك طلب نسخة من بياناتك أو حذفها في أي وقت.', en: 'You can ask for a copy of your data, or for it to be deleted, at any time.' },
     ],
   },
 
@@ -80,7 +80,7 @@ export const privacy = {
         },
         {
           p: {
-            ar: 'ما نطلب منك رقم الهوية ولا بيانات بطاقتك البنكية، ولا نجمع موقعك الجغرافي. وإذا ذكرت في ملاحظاتك معلومة صحية مثل الحساسية، نستخدمها فقط لتجهيز أكلك بأمان.',
+            ar: 'لا نطلب منك رقم الهوية ولا بيانات بطاقتك البنكية، ولا نجمع موقعك الجغرافي. وإذا ذكرت في ملاحظاتك معلومة صحية مثل الحساسية، نستخدمها فقط لتجهيز أكلك بأمان.',
             en: 'We never ask for your ID number or card details, and we don’t collect your location. If you mention health information such as an allergy, we use it only to prepare your food safely.',
           },
         },
@@ -101,7 +101,7 @@ export const privacy = {
         },
         {
           p: {
-            ar: 'لن نرسل لك رسائل تسويقية إلا إذا وافقت على ذلك صراحةً، وتقدر تلغي اشتراكك متى ما حبيت.',
+            ar: 'لن نرسل لك رسائل تسويقية إلا إذا وافقت على ذلك صراحةً، ويمكنك إلغاء اشتراكك في أي وقت.',
             en: 'We won’t send you marketing unless you’ve clearly said yes, and you can opt out whenever you like.',
           },
         },
@@ -178,13 +178,13 @@ export const privacy = {
         },
         {
           p: {
-            ar: 'لأن الموقع نسخة تجريبية، يُحفظ الحجز الذي تسويه <strong>داخل متصفحك فقط</strong> (عبر خاصية التخزين المحلي) حتى تقدر ترجع لتفاصيله. هذه البيانات ما تطلع من جهازك، ولا توصلنا ولا توصل أي أحد.',
+            ar: 'لأن الموقع نسخة تجريبية، يُحفظ الحجز الذي تُجريه <strong>داخل متصفحك فقط</strong> (عبر خاصية التخزين المحلي) حتى تتمكن من الرجوع إلى تفاصيله. ولا تغادر هذه البيانات جهازك، ولا تصل إلينا أو إلى أي طرف آخر.',
             en: 'Because this is a demo, any booking you make is saved <strong>only in your own browser</strong> (using local storage) so you can see its details again. It never leaves your device and never reaches us or anyone else.',
           },
         },
         {
           p: {
-            ar: 'تقدر تمسحها في أي وقت من إعدادات المتصفح عبر حذف بيانات هذا الموقع.',
+            ar: 'يمكنك مسحها في أي وقت من إعدادات المتصفح عبر حذف بيانات هذا الموقع.',
             en: 'You can remove it at any time by clearing this site’s data in your browser settings.',
           },
         },
@@ -211,7 +211,7 @@ export const privacy = {
         },
         {
           p: {
-            ar: 'نرد على طلبك خلال 30 يومًا. وإذا ما كنت راضيًا عن طريقة تعاملنا، يحق لك تقديم شكوى إلى الجهة المختصة بحماية البيانات في المملكة.',
+            ar: 'نرد على طلبك خلال 30 يومًا. وإذا لم تكن راضيًا عن طريقة تعاملنا، يحق لك تقديم شكوى إلى الجهة المختصة بحماية البيانات في المملكة.',
             en: 'We’ll respond within 30 days. If you’re not happy with how we’ve handled your request, you can raise a complaint with the competent data-protection authority in Saudi Arabia.',
           },
         },
@@ -223,7 +223,7 @@ export const privacy = {
       body: [
         {
           p: {
-            ar: 'لأي سؤال عن خصوصيتك أو لتقديم طلب يتعلق ببياناتك، راسلنا على <a href="mailto:privacy@mishwar.example">privacy@mishwar.example</a> واذكر الاسم ورقم الجوال المستخدمَين في الحجز حتى نوصل لبياناتك بسرعة.',
+            ar: 'لأي سؤال عن خصوصيتك أو لتقديم طلب يتعلق ببياناتك، راسلنا على <a href="mailto:privacy@mishwar.example">privacy@mishwar.example</a> واذكر الاسم ورقم الجوال المستخدمَين في الحجز حتى نصل إلى بياناتك بسرعة.',
             en: 'For any privacy question, or to make a request about your data, email <a href="mailto:privacy@mishwar.example">privacy@mishwar.example</a>. Include the name and mobile number you booked with so we can find your details quickly.',
           },
         },
