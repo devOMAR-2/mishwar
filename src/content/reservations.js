@@ -76,7 +76,7 @@ export const reservations = {
       errors: {
         required: { ar: 'حدّد عدد الأشخاص.', en: 'Enter the number of guests.' },
         range: {
-          ar: 'الحجز أونلاين من 1 إلى 12 شخص. للمجموعات الأكبر اتصل فينا.',
+          ar: 'الحجز أونلاين من 1 إلى 12 شخص. للمجموعات الأكبر اتصل علينا.',
           en: 'Online bookings are for 1 to 12 guests. For bigger groups, please call us.',
         },
       },
@@ -141,7 +141,7 @@ export const reservations = {
       en: 'The branch confirms by SMS or WhatsApp shortly after.',
     },
     failed: {
-      ar: 'ما قدرنا نرسل حجزك. تأكد من اتصالك بالإنترنت وحاول مرة ثانية، أو اتصل فينا على {phone}.',
+      ar: 'ما قدرنا نرسل حجزك. تأكد من اتصالك بالإنترنت وحاول مرة ثانية، أو اتصل علينا على {phone}.',
       en: 'We couldn’t send your booking. Check your connection and try again, or call us on {phone}.',
     },
     noscript: {
@@ -197,7 +197,7 @@ export const reservations = {
 
   success: {
     eyebrow: { ar: 'تم الإرسال', en: 'Request sent' },
-    title: { ar: 'تم استلام حجزك', en: 'Your reservation has been received.' },
+    title: { ar: 'تم استلام حجزك', en: 'Your reservation has been received' },
     text: {
       ar: 'شكرًا {name}. وصل طلبك لفريق {branch}، وبيؤكّدون لك الحجز برسالة أو على الواتساب على الرقم {phone} خلال وقت قصير.',
       en: 'Thank you, {name}. Your request is with the {branch} team — they’ll confirm by SMS or WhatsApp on {phone} shortly.',
@@ -239,7 +239,7 @@ export const reservations = {
       {
         title: { ar: 'الأطفال على الراس', en: 'Children welcome' },
         text: {
-          ar: 'عندنا كراسي أطفال في الفرعين. اذكرها في الملاحظات ونجهّزها قبل توصل.',
+          ar: 'عندنا كراسي أطفال في الفرعين. اذكرها في الملاحظات ونجهّزها قبل ما توصل.',
           en: 'Both branches have high chairs — mention it in the notes and we’ll have one ready.',
         },
       },
