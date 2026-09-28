@@ -10,18 +10,6 @@ Bilingual (Arabic first, English second), fully responsive, and built from scrat
 
 ---
 
-## Screenshots
-
-| Home (Arabic, desktop) | Menu (English, mobile) |
-| --- | --- |
-| `docs/screenshots/home-ar-desktop.png` | `docs/screenshots/menu-en-mobile.png` |
-
-| Reservations | Locations |
-| --- | --- |
-| `docs/screenshots/reservations-ar-desktop.png` | `docs/screenshots/locations-en-desktop.png` |
-
----
-
 ## Overview
 
 Mishwar serves the food Saudis grew up on, including kabsa, jareesh, qursan, matazeez and saleeg. The dishes are cooked by the old rules and presented through a contemporary restaurant experience. The website had to carry the same idea: recognisably Saudi, warm and social, but never a heritage cliché or a generic restaurant theme.
