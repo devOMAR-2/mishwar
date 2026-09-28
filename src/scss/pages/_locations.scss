@@ -13,21 +13,21 @@
   @include mq(lg) {
     .page-hero__inner {
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-      grid-template-rows: 1fr auto auto auto 1fr;
+      grid-template-rows: auto auto auto 1fr;
       column-gap: clamp(2.5rem, 5vw, 5.5rem);
       row-gap: var(--space-m);
     }
 
     .page-hero__eyebrow {
-      grid-row: 2;
+      grid-row: 1;
     }
 
     .page-hero__title {
-      grid-row: 3;
+      grid-row: 2;
     }
 
     .page-hero__lede {
-      grid-row: 4;
+      grid-row: 3;
     }
   }
 }

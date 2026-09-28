@@ -10,8 +10,9 @@
 // ---------------------------------------------------------------------------
 // Opener
 // ---------------------------------------------------------------------------
+// Same top spacing as .page-hero, so every page opens at the same height.
 .menu-hero {
-  padding-block: clamp(2.5rem, 1.5rem + 5vw, 6rem) clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  padding-block: clamp(3rem, 2rem + 6vw, 7.5rem) clamp(2.5rem, 1.5rem + 4vw, 5rem);
 }
 
 .menu-hero__grid {
@@ -21,7 +22,7 @@
   @include mq(lg) {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: var(--space-l);
-    align-items: end;
+    align-items: start;
   }
 }
 
