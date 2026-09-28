@@ -12,6 +12,9 @@ export default function openStatus(el) {
   const text = el.querySelector('.open-status__text');
   if (!location?.hours || !text) return;
 
+  // A time never breaks between the digits and its AM/PM marker.
+  const time = (minutes) => formatTime(minutes, lang).replace(/ /g, '\u00a0');
+
   const render = () => {
     const status = getOpenStatus(location.hours);
     el.dataset.state = status.isOpen ? 'open' : 'closed';
@@ -20,9 +23,9 @@ export default function openStatus(el) {
     headline.textContent = t(status.isOpen ? ui.status.openNow : ui.status.closedNow);
 
     let detail;
-    if (status.isOpen) detail = t(ui.status.closesAt, { time: formatTime(status.closesAt, lang) });
-    else if (status.isToday) detail = t(ui.status.opensAt, { time: formatTime(status.opensAt, lang) });
-    else detail = t(ui.status.opensTomorrow, { time: formatTime(status.opensAt, lang) });
+    if (status.isOpen) detail = t(ui.status.closesAt, { time: time(status.closesAt) });
+    else if (status.isToday) detail = t(ui.status.opensAt, { time: time(status.opensAt) });
+    else detail = t(ui.status.opensTomorrow, { time: time(status.opensAt) });
 
     text.replaceChildren(headline, ` · ${detail}`);
   };
