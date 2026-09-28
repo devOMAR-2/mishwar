@@ -43,6 +43,13 @@
     }
   }
 
+  // Never let keyboard focus land on content that is still hidden.
+  .js [data-reveal]:focus-within {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
   // Failsafe: if the reveal script never boots (blocked, offline, module
   // error), show everything after a short grace period. reveal.js marks the
   // document with .reveal-ready as soon as it takes over.
