@@ -2,7 +2,7 @@
 
 export const locationsPage = {
   meta: {
-    title: { ar: 'الفروع | مِشوار الياسمين وقرطبة — الرياض', en: 'Locations | Mishwar Al Yasmin & Qurtubah, Riyadh' },
+    title: { ar: 'الفروع: الياسمين وقرطبة، الرياض', en: 'Locations: Al Yasmin & Qurtubah, Riyadh' },
     description: {
       ar: 'عناوين فروع مِشوار في الرياض وساعات العمل وأرقام التواصل والمواقف: الياسمين في الشمال، وقرطبة في الشرق — والفرع الثالث قريبًا.',
       en: 'Addresses, opening hours, phone numbers and parking for Mishwar in Riyadh: Al Yasmin in the north, Qurtubah in the east — and a third room on the way.',
