@@ -955,6 +955,12 @@
   list-style: none;
   cursor: pointer;
 
+  // Reem Kufi's initials read like tatweel at this size; questions are
+  // information, so Arabic uses the text face.
+  &:lang(ar) {
+    font-family: var(--ff-text);
+  }
+
   &:lang(en) {
     font-weight: 400;
     line-height: 1.25;
