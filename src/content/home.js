@@ -60,6 +60,7 @@ export const home = {
       ar: 'ستة أطباق تختصر مِشوار: وصفات من سفرة البيت، بتقنيات مطبخ اليوم.',
       en: 'Six plates that sum up Mishwar: recipes from the family table, cooked with today’s kitchen craft.',
     },
+    railLabel: { ar: 'قائمة أطباق مِشوار المميزة', en: 'Signature dishes list' },
   },
 
   philosophy: {

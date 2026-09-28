@@ -100,7 +100,7 @@ function signatureDishes(ctx) {
         ${sectionHead({ eyebrow: ctx.t(c.eyebrow), title: raw(ctx.t(c.title)), intro: ctx.t(c.intro), id: 'signatures-title' })}
         <a class="link-arrow signatures__all" href="${ctx.url('menu')}" data-reveal>${ctx.t(ui.cta.fullMenu)}${icon('arrow')}</a>
       </div>
-      <div class="signatures__rail" data-reveal-stagger>
+      <div class="signatures__rail" tabindex="0" role="region" aria-label="${ctx.t(c.railLabel)}" data-reveal-stagger>
         ${signatures.map((item, index) => dishCard(ctx, item, { index, className: 'signatures__card', sizes: '(min-width: 1024px) 22rem, (min-width: 768px) 44vw, 80vw' }))}
       </div>
     </div>

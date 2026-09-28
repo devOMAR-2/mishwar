@@ -501,6 +501,12 @@
     scroll-snap-align: start;
   }
 
+  // Keyboard-scrollable on small screens; keep the ring inside the viewport.
+  &:focus-visible {
+    @include focus-ring;
+    outline-offset: -2px;
+  }
+
   @include mq(md) {
     grid-auto-columns: 44%;
   }
