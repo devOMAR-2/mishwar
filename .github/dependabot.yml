@@ -1,0 +1,33 @@
+version: 2
+
+updates:
+  # Build tooling (sass, sharp)
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday
+      time: "06:00"
+      timezone: Asia/Riyadh
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: build
+      include: scope
+    groups:
+      tooling:
+        patterns: ["*"]
+        update-types: [minor, patch]
+
+  # Actions used by the deploy workflow
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: sunday
+      time: "06:00"
+      timezone: Asia/Riyadh
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]
