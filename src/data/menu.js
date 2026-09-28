@@ -10,7 +10,7 @@ export const menuCategories = [
     id: 'starters',
     name: { ar: 'المقبلات', en: 'Starters' },
     intro: {
-      ar: 'أطباق صغيرة تصل إلى الطاولة أولًا، والأحلى تطلبون منها كم طبق وتتقاسمونها.',
+      ar: 'أطباق صغيرة توصل الطاولة قبل غيرها، والأحلى تطلب منها كم طبق وتتقاسمها مع ربعك.',
       en: 'Small plates that land first. Order a few and pass them around the table.',
     },
   },
@@ -654,7 +654,7 @@ export const menuItems = [
 
 export const dietaryLabels = {
   vegetarian: { ar: 'نباتي', en: 'Vegetarian' },
-  vegan: { ar: 'نباتي صرف', en: 'Vegan' },
+  vegan: { ar: 'نباتي بالكامل', en: 'Vegan' },
   'gluten-free': { ar: 'خالٍ من الجلوتين', en: 'Gluten-free' },
   nuts: { ar: 'يحتوي على مكسرات', en: 'Contains nuts' },
 };
