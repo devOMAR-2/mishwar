@@ -349,7 +349,7 @@ legend.field__label {
 
     &:lang(en) {
       font-weight: 400;
-      font-size: 1.35rem;
+      font-size: clamp(1.15rem, 0.95rem + 1vw, 1.35rem);
       line-height: 1.15;
     }
   }
@@ -357,6 +357,11 @@ legend.field__label {
   .choice__detail {
     font-size: var(--fs-xs);
     color: var(--fg-soft);
+  }
+
+  .choice__detail,
+  .choice__note {
+    text-wrap: pretty;
   }
 
   .choice__note {
