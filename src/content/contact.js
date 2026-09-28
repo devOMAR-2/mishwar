@@ -137,7 +137,7 @@ export const contact = {
 
   success: {
     eyebrow: { ar: 'تم الإرسال', en: 'Message sent' },
-    title: { ar: 'وصلتنا رسالتك', en: 'Thank you — we have your message.' },
+    title: { ar: 'وصلتنا رسالتك', en: 'We have your message' },
     text: {
       ar: 'شكرًا {name}. بنرد عليك خلال يوم عمل على {contact}.',
       en: 'Thanks, {name}. We’ll reply within one working day at {contact}.',
