@@ -72,8 +72,8 @@ export const about = {
         title: { ar: 'غرفة صغيرة في الياسمين', en: 'A small room in Al Yasmin' },
         body: [
           {
-            ar: 'أول فرع فتح بـ 38 كرسي، وتنور واحد، وتسعة أطباق بس. أمهم كانت تمر كل خميس تذوق الجريش وتعطينا رأيها بصراحة — وأكثر من مرة رجّعنا الوصفة من أولها.',
-            en: 'The first room opened with 38 seats, one tannour oven and nine dishes. Their mother came by every Thursday to taste the jareesh and give her honest verdict — more than once, we started the recipe over.',
+            ar: 'أول فرع فتح بـ 38 كرسي، وتنور واحد، وتسعة أطباق بس. أمهم كانت تمر كل خميس تذوق الجريش وتعطيهم رأيها بصراحة — وأكثر من مرة رجعوا للوصفة من أولها.',
+            en: 'The first room opened with 38 seats, one tannour oven and nine dishes. Their mother came by every Thursday to taste the jareesh and give her honest verdict — more than once, they started the recipe over.',
           },
           {
             ar: 'الناس جات عشان الكبسة، ورجعت عشان الجلسة. صارت الطاولات تنضم لبعض، وعزايم العائلات تنحجز قبلها بأسبوع.',
