@@ -43,6 +43,17 @@
     }
   }
 
+  // Failsafe: if the reveal script never boots (blocked, offline, module
+  // error), show everything after a short grace period. reveal.js marks the
+  // document with .reveal-ready as soon as it takes over.
+  .js:not(.reveal-ready) [data-reveal]:not(.is-inview) {
+    animation: reveal-failsafe 0s 2.5s forwards;
+
+    img {
+      animation: reveal-failsafe 0s 2.5s forwards;
+    }
+  }
+
   // Cross-document page transitions (progressive enhancement).
   @view-transition {
     navigation: auto;
@@ -58,6 +69,15 @@
 
   .site-header {
     view-transition-name: site-header;
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    scale: 1;
   }
 }
 

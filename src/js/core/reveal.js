@@ -5,6 +5,11 @@
  */
 export function initReveal() {
   const targets = document.querySelectorAll('[data-reveal]');
+  // The CSS failsafe (base/_motion.scss) reveals everything ~2.5 s after first
+  // paint unless this flag is set. On a very slow boot it has already fired, so
+  // keep the content shown instead of hiding it again.
+  if (performance.now() > 2400) targets.forEach((el) => el.classList.add('is-inview'));
+  document.documentElement.classList.add('reveal-ready');
   if (!targets.length) return;
 
   document.querySelectorAll('[data-reveal-stagger]').forEach((group) => {
