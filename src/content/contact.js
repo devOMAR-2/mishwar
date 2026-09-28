@@ -49,7 +49,7 @@ export const contact = {
     eyebrow: { ar: 'راسلنا', en: 'Write to us' },
     title: { ar: 'اكتب لنا <span class="accent">رسالة</span>', en: 'Send us <span class="accent">a note</span>' },
     intro: {
-      ar: 'قل لنا وش تحتاج ومن يرد عليك. الرسائل توصل للشخص المسؤول مباشرة — مو لصندوق منسي.',
+      ar: 'قل لنا وش تحتاج، ونوصّل رسالتك للشخص المسؤول مباشرة — مو لصندوق منسي.',
       en: 'Tell us what you need and we’ll pass it to the right person — not a forgotten inbox.',
     },
     caption: { ar: 'نرد بنفس الاهتمام اللي نصب فيه القهوة.', en: 'We answer with the same care we pour the coffee.' },
