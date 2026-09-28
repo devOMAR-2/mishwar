@@ -21,8 +21,8 @@ export const formMessages = {
     required: { ar: 'هذا الحقل مطلوب.', en: 'This field is required.' },
     email: { ar: 'اكتب بريد إلكتروني صحيح، مثل ⁦name@mail.example⁩.', en: 'Enter a valid email address, like name@mail.example.' },
     phone: {
-      ar: 'اكتب رقم جوال سعودي من 9 أرقام يبدأ بـ 5، مثل ⁦50 123 4567⁩.',
-      en: 'Enter a Saudi mobile number: 9 digits starting with 5, like 50 123 4567.',
+      ar: 'اكتب رقم جوال سعودي من 9 أرقام يبدأ بـ 5، مثل ⁦50 000 0000⁩.',
+      en: 'Enter a Saudi mobile number: 9 digits starting with 5, like 50 000 0000.',
     },
     tooShort: { ar: 'اكتب {min} أحرف على الأقل.', en: 'Enter at least {min} characters.' },
     tooLong: { ar: 'الحد الأقصى {max} حرف.', en: 'Use {max} characters or fewer.' },

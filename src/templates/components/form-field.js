@@ -104,7 +104,7 @@ export function phoneField(ctx, { id, name = 'phone', label, hint, required = tr
         inputmode: 'tel',
         autocomplete: 'tel-national',
         dir: 'ltr',
-        placeholder: '50 123 4567',
+        placeholder: '50 000 0000',
         required,
         disabled: hidden,
         'data-validate': 'saudi-mobile',

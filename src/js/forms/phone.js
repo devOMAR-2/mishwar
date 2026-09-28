@@ -12,7 +12,7 @@ const toWesternDigits = (value) =>
 
 const digitsOf = (value) => toWesternDigits(value).replace(/\D/g, '');
 
-/** "+966 50 123 4567" | "0501234567" | "٥٠١٢٣٤٥٦٧" → "501234567" */
+/** "+966 50 000 0000" | "0500000000" | "٥٠٠٠٠٠٠٠٠" → "500000000" */
 export function normaliseSaudiMobile(value) {
   let digits = digitsOf(value);
   if (digits.length > 9) digits = digits.replace(/^(00)?966/, '');
