@@ -784,6 +784,17 @@
   }
 }
 
+// Phones: a full-width button, with the phone line flush to the text edge.
+.reserve-cta__actions {
+  @include mq-down(sm) {
+    inline-size: 100%;
+
+    .btn {
+      flex: 1 1 100%;
+    }
+  }
+}
+
 .reserve-cta__phone {
   display: inline-flex;
   align-items: center;
@@ -792,6 +803,10 @@
   padding-inline: 0.5rem;
   font-weight: 600;
   text-decoration: none;
+
+  @include mq-down(sm) {
+    padding-inline: 0;
+  }
 
   @include hover {
     text-decoration: underline;

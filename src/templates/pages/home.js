@@ -184,7 +184,7 @@ function reserveCta(ctx) {
         <p class="eyebrow">${ctx.t(c.eyebrow)}</p>
         <h2 class="reserve-cta__title" id="reserve-title">${ctx.t(c.title)}</h2>
         <p class="reserve-cta__text">${ctx.t(c.text)}</p>
-        <div class="btn-row">
+        <div class="btn-row reserve-cta__actions">
           ${button({ href: ctx.url('reservations'), label: ctx.t(ui.cta.reserve), variant: 'light', size: 'lg', iconName: 'arrow' })}
           <a class="reserve-cta__phone" href="tel:${site.contact.phone}">${icon('phone')}<span>${ctx.t(c.call)} <span dir="ltr">${site.contact.phoneDisplay}</span></span></a>
         </div>
