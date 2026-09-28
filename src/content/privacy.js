@@ -219,7 +219,7 @@ export const privacy = {
     },
     {
       id: 'contact',
-      title: { ar: 'تواصل معنا', en: 'Contact us' },
+      title: { ar: 'كيف تتواصل معنا', en: 'Contact us' },
       body: [
         {
           p: {
