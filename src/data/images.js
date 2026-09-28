@@ -193,7 +193,7 @@ export const imageContent = {
       ar: 'سلطة مقطعة من الطماطم والخيار والرمان والأعشاب الطازجة',
       en: 'A chopped salad of tomato, cucumber, pomegranate and fresh herbs',
     },
-    credit: stock('dimitri.photography'),
+    credit: stock('Dimitri'),
   },
   'dish-sambousek': {
     alt: {
