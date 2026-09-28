@@ -158,6 +158,12 @@
   font-style: italic;
   color: var(--fg-mute);
   transition: color var(--dur-fast);
+
+  &:lang(ar) {
+    font-family: var(--ff-text);
+    font-style: normal;
+    font-weight: 600;
+  }
 }
 
 // "This is a concept project" notice — the dashed border reads as a route line.
@@ -259,6 +265,13 @@
   font-weight: 300;
   line-height: 1;
   color: var(--accent);
+
+  // Arabic numbering matches the Menu: upright text face, not Latin italic.
+  &:lang(ar) {
+    font-family: var(--ff-text);
+    font-style: normal;
+    font-weight: 600;
+  }
 }
 
 .legal-section__title {
