@@ -148,7 +148,7 @@ export function riyadhMap(ctx, branches) {
         ? html`<a class="rmap__pin rmap__pin--soon rmap__pin--left" href="#branch-${soon.id}" style="${percent(NEXT_STOP)}">
             <span class="rmap__dot" aria-hidden="true">?</span>
             <span class="rmap__tag"><span class="rmap__name">${ctx.t(c.soon)}</span></span>
-            <span class="visually-hidden"> — ${ctx.t(soon.name)}, ${ctx.t(c.legend.soon)}</span>
+            <span class="visually-hidden"> — ${ctx.t(soon.name)}${ctx.lang === 'ar' ? '،' : ','} ${ctx.t(c.legend.soon)}</span>
           </a>`
         : ''}
     </div>
