@@ -11,7 +11,7 @@ export const notFound = {
 
   eyebrow: { ar: 'خطأ 404 · الصفحة غير موجودة', en: 'Error 404 · Page not found' },
   title: {
-    ar: 'يبدو إن المشوار <span class="accent">أخذك لمكان غلط.</span>',
+    ar: 'شكل المشوار <span class="accent">أخذك لمكان غلط.</span>',
     en: 'Looks like this mishwar <span class="accent">took a wrong turn.</span>',
   },
   lede: {
