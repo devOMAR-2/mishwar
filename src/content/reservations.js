@@ -89,7 +89,7 @@ export const reservations = {
         { value: '', label: { ar: 'بدون تفضيل', en: 'No preference' } },
         { value: 'indoor', label: { ar: 'داخلية', en: 'Indoors' } },
         { value: 'terrace', label: { ar: 'خارجية', en: 'Terrace' }, detail: { ar: 'الياسمين فقط', en: 'Al Yasmin only' }, branches: ['yasmin'] },
-        { value: 'private', label: { ar: 'غرفة خاصة', en: 'Private room' }, detail: { ar: 'حسب التوفّر', en: 'Subject to availability' } },
+        { value: 'private', label: { ar: 'غرفة خاصة', en: 'Private room' }, detail: { ar: 'الياسمين فقط · حسب التوفّر', en: 'Al Yasmin only · subject to availability' }, branches: ['yasmin'] },
       ],
     },
 
@@ -181,8 +181,8 @@ export const reservations = {
       en: 'The time you picked isn’t available for this day or branch — please choose another.',
     },
     seatingCleared: {
-      ar: 'الجلسات الخارجية في الياسمين فقط، فرجّعنا الجلسة لـ«بدون تفضيل».',
-      en: 'Terrace seating is only at Al Yasmin, so we’ve set seating back to no preference.',
+      ar: 'الجلسات الخارجية والغرفة الخاصة في الياسمين فقط، فرجّعنا الجلسة لـ«بدون تفضيل».',
+      en: 'The terrace and the private room are only at Al Yasmin, so we’ve set seating back to no preference.',
     },
     guestsLimit: {
       ar: 'الحد الأعلى أونلاين 12 شخص. للمجموعات الأكبر اتصل على {phone}.',
