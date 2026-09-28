@@ -361,6 +361,11 @@
     row-gap: clamp(3rem, 5vw, 5rem);
     align-items: center;
   }
+
+  // Small laptops: give the headline room to keep its accent line whole.
+  @include mq(lg, xl) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
 }
 
 .lost__copy {
