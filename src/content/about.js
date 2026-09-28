@@ -5,7 +5,7 @@ export const about = {
     title: { ar: 'قصتنا | مِشوار — مطعم سعودي حديث في الرياض', en: 'Our Story | Mishwar, Contemporary Saudi Restaurant in Riyadh' },
     description: {
       ar: 'كيف بدأ مِشوار: كبسة الجمعة، غرفة صغيرة في حي الياسمين عام 2022، ومكوّنات من حايل والقصيم والأحساء وجازان. أكل سعودي تعرفه، بتقديم معاصر.',
-      en: 'How Mishwar began: Friday kabsa, a small room in Al Yasmin in 2022, and ingredients from Hail, Qassim, Al-Ahsa and Jazan. Saudi food you know, served in a contemporary room.',
+      en: 'How Mishwar began: Friday kabsa, a small room in Al Yasmin in 2022, and ingredients from Hail, Qassim, Al-Ahsa and Jazan, served in a contemporary room.',
     },
   },
 

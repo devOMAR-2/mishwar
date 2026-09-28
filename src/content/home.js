@@ -5,7 +5,7 @@ export const home = {
     title: { ar: 'مِشوار | مطعم سعودي حديث في الرياض', en: 'Mishwar | Contemporary Saudi Restaurant in Riyadh' },
     description: {
       ar: 'مِشوار مطعم سعودي حديث في الرياض: كبسة، جريش، قرصان ومطازيز بتقديم معاصر. فرعان في الياسمين وقرطبة — احجز طاولتك أونلاين.',
-      en: 'Mishwar is a contemporary Saudi restaurant in Riyadh serving kabsa, jareesh, qursan and matazeez with a modern touch. Visit us in Al Yasmin or Qurtubah — book online.',
+      en: 'Mishwar is a contemporary Saudi restaurant in Riyadh serving kabsa, jareesh, qursan and matazeez. Visit us in Al Yasmin or Qurtubah — book online.',
     },
   },
 

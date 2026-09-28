@@ -11,7 +11,7 @@ export const contact = {
     title: { ar: 'تواصل معنا', en: 'Contact' },
     description: {
       ar: 'تواصل مع مِشوار في الرياض: الرقم الموحّد، واتساب، البريد الإلكتروني للمناسبات والوظائف، وعناوين وساعات عمل فرعي الياسمين وقرطبة.',
-      en: 'Get in touch with Mishwar in Riyadh — central line, WhatsApp, email for events and careers, plus addresses and opening hours for our Al Yasmin and Qurtubah branches.',
+      en: 'Contact Mishwar in Riyadh: central line, WhatsApp, email for events and careers, plus addresses and hours for our Al Yasmin and Qurtubah branches.',
     },
   },
 

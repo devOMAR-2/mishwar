@@ -5,7 +5,7 @@ export const menuPage = {
     title: { ar: 'المنيو', en: 'Menu' },
     description: {
       ar: 'منيو مِشوار في الرياض: كبسة لحم نعيمي، جريش، قرصان، مطازيز وسليق، مع مقبلات للمشاركة وحلى وقهوة سعودية. الأسعار بالريال وشاملة الضريبة.',
-      en: 'The Mishwar menu: Saudi food in Riyadh — Naeemi lamb kabsa, jareesh, qursan, matazeez and saleeg, plus sharing plates, desserts and Saudi coffee. Prices in SAR, VAT included.',
+      en: 'The Mishwar menu: Naeemi lamb kabsa, jareesh, qursan, matazeez and saleeg, plus sharing plates, desserts and Saudi coffee. Prices in SAR, VAT included.',
     },
     menuName: { ar: 'منيو مِشوار', en: 'Mishwar menu' },
   },
