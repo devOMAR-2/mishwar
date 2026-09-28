@@ -81,21 +81,29 @@
   }
 
   &.is-today {
+    gap: 1.2rem;
+
     dt,
     dd {
       color: var(--fg);
       font-weight: 600;
     }
 
+    // The today dot hangs in the gap after the label, so it can never
+    // wrap onto a line of its own.
+    dt {
+      position: relative;
+    }
+
     dt::after {
       content: '';
-      display: inline-block;
+      position: absolute;
+      inset-block-start: calc(0.5lh - 0.2rem);
+      inset-inline-end: -0.8rem;
       inline-size: 0.4rem;
       block-size: 0.4rem;
-      margin-inline-start: 0.5rem;
       border-radius: 50%;
       background: var(--accent);
-      vertical-align: middle;
     }
   }
 }
