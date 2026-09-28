@@ -90,7 +90,7 @@ export const locationsPage = {
   },
 
   faq: {
-    eyebrow: { ar: 'قبل لا تجي', en: 'Good to know' },
+    eyebrow: { ar: 'قبل ما تجي', en: 'Good to know' },
     title: { ar: 'أسئلة <span class="accent">تتكرر</span>', en: 'Questions we <span class="accent">get a lot</span>' },
     items: [
       {
