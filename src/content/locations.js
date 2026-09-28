@@ -73,7 +73,7 @@ export const locationsPage = {
       detailImage: 'interior-main',
       detailAlt: { ar: 'صالة فرع قرطبة بطاولاتها الطويلة', en: 'The Qurtubah dining room and its long tables' },
       directions: {
-        ar: 'على الطريق الخدمي، بعد التقاطع الرئيسي بقليل، والمدخل من الجهة الجنوبية.',
+        ar: 'على الطريق الخدمي، بعد التقاطع الرئيسي بقليل. المواقف الخاصة تحت المبنى، والمدخل من الجهة الجنوبية.',
         en: 'On the service road, a short drive past the main junction. Private parking is beneath the building; the entrance is on the south side.',
       },
     },
