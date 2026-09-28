@@ -144,7 +144,6 @@ export const imageContent = {
       ar: 'ريش لحم ضأن مشوية بقشرة من الأعشاب على لوح خشبي',
       en: 'Herb-crusted grilled lamb chops piled on a wooden board',
     },
-    credit: stock('Snappr'),
   },
   'dish-grill': {
     alt: {
