@@ -637,7 +637,7 @@
   padding-block: var(--space-s);
   border-block-end: 1px solid var(--line);
 
-  dt {
+  > dt {
     font-size: var(--fs-xs);
     font-weight: 600;
     color: var(--fg-mute);
@@ -720,10 +720,6 @@
   @include hover {
     color: var(--c-clay);
   }
-}
-
-.branch__fact--hours .hours {
-  max-inline-size: 28rem;
 }
 
 .branch__extras {
