@@ -301,7 +301,14 @@
     display: grid;
     gap: 0.1rem;
 
-    @include mq(sm) {
+    // Label beside value while the card has the width for it; stacked in
+    // the narrow two-up cards at tablet widths.
+    @include mq(sm, md) {
+      grid-template-columns: 10rem minmax(0, 1fr);
+      gap: var(--space-s);
+    }
+
+    @include mq(lg) {
       grid-template-columns: 10rem minmax(0, 1fr);
       gap: var(--space-s);
     }
