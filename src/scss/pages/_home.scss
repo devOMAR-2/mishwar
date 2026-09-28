@@ -112,9 +112,12 @@
   position: relative;
   margin-inline-end: calc(var(--gutter) * -1);
 
+  // Bleed to the viewport edge on wide screens, not just to the gutter;
+  // .hero clips the scrollbar's width of overshoot.
   @include mq(lg) {
     align-self: stretch;
     display: grid;
+    margin-inline-end: calc(max(var(--gutter), (100vw - var(--container)) / 2) * -1);
   }
 }
 
