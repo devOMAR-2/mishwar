@@ -14,8 +14,8 @@ export const menuPage = {
     eyebrow: { ar: 'من مطبخ مِشوار · الرياض', en: 'From the Mishwar kitchen · Riyadh' },
     title: { ar: 'منيو <span class="accent">مِشوار</span>', en: 'The <span class="accent">menu</span>' },
     lede: {
-      ar: 'أطباق من سفرة نجد والحجاز: مقبلات تتقاسمها مع ربعك، أطباق رئيسية تنطبخ على مهل، وحلى وقهوة تختم فيها الجلسة.',
-      en: 'Plates from Najdi and Hijazi tables: starters to pass around, mains cooked low and slow, and sweets and coffee to close the night.',
+      ar: 'أطباق من سفرة نجد، ومن الحجاز والجنوب والشرقية: مقبلات تتقاسمها مع ربعك، أطباق رئيسية تنطبخ على مهل، وحلى وقهوة تختم فيها الجلسة.',
+      en: 'Plates from the tables of Najd, the Hijaz, the South and the East: starters to pass around, mains cooked low and slow, and sweets and coffee to close the night.',
     },
     indexLabel: { ar: 'أقسام المنيو', en: 'Menu sections' },
     allergy: {
@@ -55,7 +55,7 @@ export const menuPage = {
 
   /** Dish counts, keyed by Intl.PluralRules category (Arabic has six). */
   count: {
-    ar: { zero: 'لا توجد أطباق', one: 'طبق واحد', two: 'طبقان', few: '{n} أطباق', many: '{n} طبقًا', other: '{n} طبق' },
+    ar: { zero: 'ولا طبق', one: 'طبق واحد', two: 'طبقان', few: '{n} أطباق', many: '{n} طبقًا', other: '{n} طبق' },
     en: { one: '{n} dish', other: '{n} dishes' },
   },
 
@@ -80,13 +80,13 @@ export const menuPage = {
       title: { ar: 'دليل الرموز', en: 'Key' },
       rows: {
         signature: { ar: 'طبق يعرّفك على مِشوار — ابدأ منه.', en: 'The dishes we’re known for. Start here.' },
-        sharing: { ar: 'معمول للنص، يتقاسمه أكثر من شخص.', en: 'Made for the middle of the table.' },
+        sharing: { ar: 'يوضع في نص الطاولة ويتقاسمه الكل.', en: 'Made for the middle of the table.' },
         mild: { ar: 'حرارة خفيفة تناسب أغلب الناس.', en: 'A gentle warmth most people enjoy.' },
-        hot: { ar: 'حار فعلًا — اسأل عنه قبل.', en: 'Properly hot. Ask us first.' },
+        hot: { ar: 'حار فعلًا، اسأل عنه قبل ما تطلب.', en: 'Properly hot. Ask us first.' },
         vegetarian: { ar: 'بدون لحم أو دجاج أو سمك.', en: 'No meat, poultry or fish.' },
         vegan: { ar: 'بدون أي منتجات حيوانية.', en: 'No animal products at all.' },
         'gluten-free': { ar: 'بدون قمح أو شعير.', en: 'Made without wheat or barley.' },
-        nuts: { ar: 'فيه مكسرات أو فستق.', en: 'Contains nuts or pistachio.' },
+        nuts: { ar: 'فيه مكسرات، منها الفستق.', en: 'Contains nuts, including pistachio.' },
       },
     },
     allergy: {
