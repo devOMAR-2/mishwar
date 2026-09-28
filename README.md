@@ -1,5 +1,9 @@
 # Mishwar — مِشوار
 
+[![Deploy site](https://github.com/devOMAR-2/mishwar/actions/workflows/deploy.yml/badge.svg)](https://github.com/devOMAR-2/mishwar/actions/workflows/deploy.yml)
+[![Dependabot Updates](https://github.com/devOMAR-2/mishwar/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/devOMAR-2/mishwar/actions/workflows/dependabot/dependabot-updates)
+[![CodeQL](https://github.com/devOMAR-2/mishwar/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/devOMAR-2/mishwar/actions/workflows/github-code-scanning/codeql)
+
 **A contemporary Saudi restaurant website for Riyadh.**
 Bilingual (Arabic first, English second), fully responsive, and built from scratch with HTML, SCSS and vanilla JavaScript.
 
