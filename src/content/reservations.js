@@ -166,7 +166,7 @@ export const reservations = {
   // Browser-only strings (serialised into the page for the current language).
   client: {
     today: { ar: 'اليوم', en: 'Today' },
-    tomorrow: { ar: 'بكرة', en: 'Tomorrow' },
+    tomorrow: { ar: 'غدًا', en: 'Tomorrow' },
     guests: {
       ar: { one: 'شخص واحد', two: 'شخصين', few: '{n} أشخاص', other: '{n} شخص' },
       en: { one: '1 guest', other: '{n} guests' },
