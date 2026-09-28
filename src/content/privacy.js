@@ -205,7 +205,7 @@ export const privacy = {
             { ar: 'تعرف ما نجمعه عنك ولماذا — وهذا ما تشرحه هذه الصفحة.', en: 'Know what we collect about you and why — which is what this page is for.' },
             { ar: 'تطلب نسخة من بياناتك بصيغة واضحة ومقروءة.', en: 'Ask for a copy of your data in a clear, readable format.' },
             { ar: 'تطلب تصحيح أي معلومة غير دقيقة أو تحديثها.', en: 'Ask us to correct or update anything that’s wrong.' },
-            { ar: 'تطلب حذف بياناتك متى ما انتهت الحاجة إليها.', en: 'Ask us to delete your data once it’s no longer needed.' },
+            { ar: 'تطلب حذف بياناتك في أي وقت.', en: 'Ask us to delete your data at any time.' },
             { ar: 'تسحب موافقتك على أي رسائل تسويقية في أي وقت.', en: 'Withdraw your consent to marketing messages at any time.' },
           ],
         },
