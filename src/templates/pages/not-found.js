@@ -57,7 +57,7 @@ export default {
         ${button({ href: ctx.url('home'), label: ctx.t(ui.cta.backHome), variant: 'primary', size: 'lg', iconName: 'arrow', className: 'lost__home' })}
       </div>
       <nav class="lost__stops" aria-labelledby="stops-title">
-        <h2 class="lost__stops-title" id="stops-title">${ctx.t(notFound.stopsTitle)}</h2>
+        <h2 class="eyebrow" id="stops-title">${ctx.t(notFound.stopsTitle)}</h2>
         <ol class="stops" role="list">
           ${notFound.stops.map(
             (stop) => html`<li class="stops__item">

@@ -540,21 +540,6 @@
   }
 }
 
-.lost__stops-title {
-  font-family: var(--ff-text);
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: var(--fg-mute);
-
-  &:lang(en) {
-    font-size: var(--fs-2xs);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-}
-
 .stops {
   --marker: 0.85rem;
   --dots: radial-gradient(circle, var(--accent) 1px, transparent 1.5px);
