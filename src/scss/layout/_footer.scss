@@ -102,7 +102,7 @@
 
 .site-footer__list {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.25rem;
 
   li {
     display: grid;
@@ -110,7 +110,7 @@
 }
 
 .site-footer__list--nav {
-  gap: 0.35rem;
+  gap: 0;
 }
 
 .site-footer__label {
@@ -123,10 +123,13 @@
 }
 
 .site-footer__link {
+  display: inline-block;
   justify-self: start;
   text-decoration: none;
   color: var(--fg);
-  background: linear-gradient(currentColor, currentColor) no-repeat 100% 100% / 0 1px;
+  // A 44px touch target; the hover underline stays on the text line.
+  padding-block: calc((2.75rem - 1lh) / 2);
+  background: linear-gradient(currentColor, currentColor) no-repeat 100% 100% / 0 1px content-box;
   transition: background-size var(--dur-med) var(--ease-out), color var(--dur-fast);
 
   [dir='ltr'] & {
