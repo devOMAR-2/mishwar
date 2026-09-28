@@ -179,6 +179,21 @@
   @include mq(md) {
     padding: var(--space-m) var(--space-l);
   }
+
+  // Phones: the icon sits beside the title only, the text runs full width.
+  @include mq-down(sm) {
+    align-items: center;
+    row-gap: var(--space-2xs);
+
+    > div {
+      display: contents;
+    }
+
+    .legal-notice__text {
+      grid-column: 1 / -1;
+      margin-block-start: 0;
+    }
+  }
 }
 
 .legal-notice__icon {
