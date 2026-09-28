@@ -31,7 +31,6 @@ export function seoHead(ctx, { title, description, noindex = false }) {
     <meta property="og:locale" content="${LOCALES[ctx.lang]}">
     <meta property="og:locale:alternate" content="${LOCALES[ctx.otherLang]}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@mishwar">
     <meta name="twitter:title" content="${title}">
     <meta name="twitter:description" content="${description}">
     <meta name="twitter:image" content="${ogImage}">`;
