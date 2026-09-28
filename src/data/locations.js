@@ -39,7 +39,7 @@ export const locations = [
     },
     features: [
       { ar: 'جلسات خارجية', en: 'Terrace seating' },
-      { ar: 'غرفة خاصة لـ 14 شخص', en: 'Private room for 14' },
+      { ar: 'غرفة خاصة تكفي 14 شخص', en: 'Private room for 14' },
       { ar: 'خدمة صف السيارات', en: 'Valet parking' },
     ],
     hours: [weekdayHours, weekdayHours, weekdayHours, weekdayHours, lateHours, fridayHours, weekdayHours],
