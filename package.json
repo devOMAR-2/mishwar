@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Mishwar — a contemporary Saudi restaurant in Riyadh. Fictional portfolio concept.",
+  "homepage": "https://devomar-2.github.io/mishwar/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devOMAR-2/mishwar.git"
+  },
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
