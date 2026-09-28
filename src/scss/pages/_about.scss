@@ -1065,6 +1065,15 @@
 .about-close__ctas {
   justify-content: center;
   margin-block-start: var(--space-xs);
+
+  // Phones: two equal, full-width buttons rather than two ragged pills.
+  @include mq-down(sm) {
+    inline-size: 100%;
+
+    .btn {
+      flex: 1 1 100%;
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------
