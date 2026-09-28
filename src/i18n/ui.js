@@ -45,9 +45,9 @@ export const ui = {
   status: {
     openNow: { ar: 'مفتوح الآن', en: 'Open now' },
     closedNow: { ar: 'مغلق الآن', en: 'Closed now' },
-    closesAt: { ar: 'يقفل {time}', en: 'Closes {time}' },
+    closesAt: { ar: 'يُغلق {time}', en: 'Closes {time}' },
     opensAt: { ar: 'يفتح {time}', en: 'Opens {time}' },
-    opensTomorrow: { ar: 'يفتح بكرة {time}', en: 'Opens tomorrow {time}' },
+    opensTomorrow: { ar: 'يفتح غدًا {time}', en: 'Opens tomorrow {time}' },
     comingSoon: { ar: 'قريبًا', en: 'Coming soon' },
   },
 
