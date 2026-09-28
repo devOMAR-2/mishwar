@@ -3,6 +3,8 @@
 **A contemporary Saudi restaurant website for Riyadh.**
 Bilingual (Arabic first, English second), fully responsive, and built from scratch with HTML, SCSS and vanilla JavaScript.
 
+**[Live Demo](https://devomar-2.github.io/mishwar/)**
+
 > نكهة تعرفها، بشكل ما قد شفته.
 > *A familiar taste, like you’ve never seen it before.*
 
