@@ -9,6 +9,9 @@
  *   node scripts/build.mjs          production build
  *   node scripts/build.mjs --dev    expanded CSS + source maps
  *   node scripts/build.mjs --out x  build into another directory
+ *
+ *   BASE_PATH=/mishwar node scripts/build.mjs
+ *     serve from a sub-path (e.g. a project page); root-absolute URLs are prefixed
  */
 import { rm, mkdir, writeFile, cp, readFile, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -27,6 +30,8 @@ const SRC = path.join(ROOT, 'src');
 const outArg = process.argv.indexOf('--out');
 const DIST = outArg > -1 ? path.resolve(process.argv[outArg + 1]) : path.join(ROOT, 'dist');
 const DEV = process.argv.includes('--dev');
+/** Optional sub-path the site is served from, normalised to "/segment" or "". */
+const BASE = (process.env.BASE_PATH ?? '').replace(/\/+$/, '').replace(/^(?!\/|$)/, '/');
 
 const hash = (content) => createHash('sha256').update(content).digest('hex').slice(0, 10);
 const out = (...p) => path.join(DIST, ...p);
@@ -35,6 +40,17 @@ async function write(file, content) {
   await mkdir(path.dirname(file), { recursive: true });
   await writeFile(file, content);
 }
+
+/**
+ * Prefix root-absolute URLs in attributes (href, src, action, srcset lists)
+ * with BASE, so templates can keep writing "/menu/" and "/assets/…".
+ */
+const withBase = (markup) =>
+  BASE
+    ? markup
+        .replace(/\b(href|src|action)="\/(?!\/)/g, `$1="${BASE}/`)
+        .replace(/\b(srcset|imagesrcset)="([^"]*)"/g, (_, attr, list) => `${attr}="${list.replace(/(^|,\s*)\/(?!\/)/g, `$1${BASE}/`)}"`)
+    : markup;
 
 /** Light HTML tidy: drop indentation and blank lines produced by nested templates. */
 const tidy = (markup) =>
@@ -79,7 +95,7 @@ async function buildPages(assets) {
     for (const page of pages) {
       const ctx = createContext({ lang, pageId: page.id });
       const markup = layout(ctx, page, { assets }).toString();
-      await write(out(fileFor(page.id, lang)), tidy(markup));
+      await write(out(fileFor(page.id, lang)), withBase(tidy(markup)));
       count++;
     }
   }
@@ -113,13 +129,13 @@ async function buildSeoFiles() {
         short_name: site.name.ar,
         lang: 'ar',
         dir: 'rtl',
-        start_url: '/',
+        start_url: `${BASE}/`,
         display: 'standalone',
         background_color: '#f4eee4',
         theme_color: '#a64b25',
         icons: [
-          { src: '/assets/social/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/assets/social/icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: `${BASE}/assets/social/icon-192.png`, sizes: '192x192', type: 'image/png' },
+          { src: `${BASE}/assets/social/icon-512.png`, sizes: '512x512', type: 'image/png' },
         ],
       },
       null,
