@@ -177,10 +177,10 @@ function branchInfo(ctx, loc) {
       ${hoursList(ctx, loc.hours)}
     </div>
     <div class="branch-info__actions">
+      <a class="btn btn--primary btn--sm" href="${ctx.url('reservations')}?branch=${loc.id}"><span class="btn__label">${ctx.t(ui.cta.reserve)}</span></a>
       <a class="btn btn--secondary btn--sm" href="${mapsUrl(loc)}" target="_blank" rel="noopener">
         ${icon('map', { className: 'btn__icon' })}<span class="btn__label">${ctx.t(ui.cta.directions)}</span><span class="visually-hidden">${ctx.t(ui.labels.newWindow)}</span>
       </a>
-      <a class="btn btn--primary btn--sm" href="${ctx.url('reservations')}?branch=${loc.id}"><span class="btn__label">${ctx.t(ui.cta.reserveShort)}</span></a>
     </div>
   </article>`;
 }
