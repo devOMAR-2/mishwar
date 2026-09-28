@@ -720,6 +720,29 @@
     }
   }
 
+  // Full-width coming-soon card on tablets and small laptops: a short band
+  // with the name on one side and the note on the other, not a tall empty box.
+  @include mq(md, xl) {
+    .branch-card--soon {
+      min-block-size: 0;
+
+      .branch-card__soon-art {
+        margin-block-end: var(--space-m);
+      }
+
+      .branch-card__body {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+        column-gap: var(--space-xl);
+        align-items: end;
+      }
+
+      .branch-card__summary {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+    }
+  }
+
   @include mq(xl) {
     grid-template-columns: 1fr 1fr 0.72fr;
 
