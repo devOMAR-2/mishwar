@@ -23,7 +23,7 @@ export const privacy = {
       en: 'Your details, <span class="accent">handled with care</span>',
     },
     lede: {
-      ar: 'نطلب منك أقل قدر من المعلومات يكفي عشان نجهّز طاولتك أو نرد على رسالتك — وهنا نشرح بوضوح وش نسوي فيها.',
+      ar: 'نطلب منك أقل قدر ممكن من المعلومات، بس اللي يكفي عشان نجهّز طاولتك أو نرد على رسالتك — وهنا نشرح بوضوح وش نسوي فيها.',
       en: 'We ask for as little as we need to set your table or answer your message. Here’s exactly what happens to it, in plain language.',
     },
   },
