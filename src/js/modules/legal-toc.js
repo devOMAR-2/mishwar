@@ -24,6 +24,8 @@ export default function legalToc(nav) {
       entries.forEach((entry) => (entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target)));
       const current = sections.find((s) => visible.has(s));
       if (current) setCurrent(current.id);
+      // Back above the first section: nothing is being read yet.
+      else if (window.scrollY < sections[0].offsetTop) setCurrent(null);
     },
     { rootMargin: '-20% 0px -65% 0px' }
   );
