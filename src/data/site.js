@@ -8,7 +8,7 @@
 
 export const site = {
   fictional: true,
-  url: 'https://mishwar.example',
+  url: 'https://devomar-2.github.io/mishwar',
   founded: 2022,
   name: { ar: 'مِشوار', en: 'Mishwar' },
   legalName: { ar: 'مطعم مِشوار', en: 'Mishwar Restaurant' },
