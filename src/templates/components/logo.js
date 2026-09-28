@@ -14,6 +14,6 @@ export function logo(ctx, { href, className, size = 'md' } = {}) {
     <span class="wordmark__en" lang="en">Mishwar</span>`;
 
   return href
-    ? html`<a class="${cx('wordmark', `wordmark--${size}`, className)}" href="${href}" aria-label="${ctx.lang === 'ar' ? 'مِشوار — الصفحة الرئيسية' : 'Mishwar — home'}"><span class="wordmark__inner" aria-hidden="true">${mark}</span></a>`
+    ? html`<a class="${cx('wordmark', `wordmark--${size}`, className)}" href="${href}" aria-label="${ctx.lang === 'ar' ? 'مِشوار Mishwar — الصفحة الرئيسية' : 'Mishwar مِشوار — home'}"><span class="wordmark__inner" aria-hidden="true">${mark}</span></a>`
     : html`<span class="${cx('wordmark', `wordmark--${size}`, className)}" role="img" aria-label="${ctx.lang === 'ar' ? 'مِشوار' : 'Mishwar'}"><span class="wordmark__inner" aria-hidden="true">${mark}</span></span>`;
 }
