@@ -133,7 +133,7 @@ function ingredients(ctx) {
             </h3>
             <p class="ingredient__origin">${icon('pin')}${ctx.t(item.origin)}</p>
             <p class="ingredient__use">${ctx.t(item.use)}</p>
-            <p class="ingredient__km"><span class="visually-hidden">${ctx.t(c.distanceLabel)}: </span><span class="num">${item.km.toLocaleString('en-US')}</span> ${ctx.t(c.kmUnit)}</p>
+            <p class="ingredient__km"><span class="visually-hidden">${ctx.t(c.distanceLabel)}: </span><span class="num">${item.km.toLocaleString('en-US')}</span> <span class="ingredient__unit">${ctx.t(c.kmUnit)}</span></p>
           </li>`
         )}
       </ol>

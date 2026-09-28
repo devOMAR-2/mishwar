@@ -598,7 +598,7 @@
   border-block-end: 1px dashed var(--line-strong);
 
   @include mq(md) {
-    grid-template-columns: 2.5rem minmax(0, 1.25fr) minmax(0, 1fr) 4.5rem;
+    grid-template-columns: 2.5rem minmax(0, 1.25fr) minmax(0, 1fr) 5.5rem;
     grid-template-areas:
       'num name origin km'
       'num name use km';
@@ -670,6 +670,12 @@
     font-size: var(--fs-md);
     color: var(--fg);
   }
+}
+
+// Explicit gap: a plain space between the Latin number and the Arabic unit
+// collapses visually at the bidi boundary.
+.ingredient__unit {
+  margin-inline-start: 0.2em;
 }
 
 // ---------------------------------------------------------------------------
