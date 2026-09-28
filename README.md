@@ -122,9 +122,17 @@ npm run serve      # serve dist/ → http://localhost:4173
 npm run images     # regenerate WebP variants from src/assets/images/_source/
 ```
 
-`dist/` is a fully static site and can be deployed to any static host. Configure the host to serve `404.html` for unknown routes.
-
 The full-resolution photo originals (`src/assets/images/_source/`) are git-ignored because of their size; the optimised WebP files are committed.
+
+### Deployment
+
+`dist/` is a fully static site and can be deployed to any static host. When you configure the host:
+
+- Serve `404.html` (and `en/404.html` under `/en/`) for unknown routes.
+- Enable compression (gzip or brotli) for HTML, CSS, JS, JSON and SVG.
+- Cache fingerprinted assets (`main.css?v=…`, `main.js?v=…`), fonts and images for a long time (`Cache-Control: public, max-age=31536000, immutable`), and serve HTML with `Cache-Control: no-cache` so new builds show up straight away.
+
+`npm run serve` follows the same rules, so it is a fair local stand-in for production.
 
 ## Design philosophy
 

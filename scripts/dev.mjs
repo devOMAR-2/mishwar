@@ -25,6 +25,7 @@ function build() {
 }
 
 const server = createStaticServer({
+  caching: false,
   transformHtml: (html) => html.replace('</body>', `${RELOAD_SNIPPET}</body>`),
   intercept(req, res) {
     if (req.url !== '/__reload') return false;
